@@ -11,6 +11,11 @@ router.get('/configurator', function (req, res, next) {
   res.render('configurator/configurator', { title: "Konfigurator" });
 });
 
+router.get('/analytics', function (req, res, next) {
+  res.render('pages/analytics', { title: "Impressum" });
+});
+
+
 router.get('/registrieren', function (req, res, next) {
   res.render('pages/register', { title: "Registrierung" });
 });
@@ -26,6 +31,8 @@ router.get('/disclaimer', function (req, res, next) {
 router.get('/imprint', function (req, res, next) {
   res.render('pages/imprint', { title: "Impressum" });
 });
+
+
 
 
 module.exports = router;
