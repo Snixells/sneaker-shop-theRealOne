@@ -7,6 +7,8 @@ router.get('/', function (req, res, next) {
   // WordSchema.find({count: {$gt: 5}}, (err, words) => {
    res.render('configurator/index');
   // });
+  // 
+
 });
 
 module.exports = router;
