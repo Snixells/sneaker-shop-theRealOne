@@ -5,7 +5,7 @@ var router = express.Router();
 /* GET home page. */
 router.get('/', function (req, res, next) {
   // WordSchema.find({count: {$gt: 5}}, (err, words) => {
-  // res.render('configurator/index', {words: words});
+   res.render('configurator/index');
   // });
 });
 
