@@ -27,7 +27,7 @@ router.get('/registrieren', function (req, res, next) {
 });
 
 router.post('/registrieren',passport.authenticate('local.signup',{
-  succesRedirect: '/profile',
+  successRedirect: '/profile',
   failureRedirect:'/registrieren',
   failureFlash: true
 }));
