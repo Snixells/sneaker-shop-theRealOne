@@ -23,7 +23,8 @@ router.get('/analytics', function (req, res, next) {
 
 
 router.get('/registrieren', function (req, res, next) {
-  res.render('pages/register', {csrfToken: req.csrfToken(), title: "Registrierung" });
+  var messages = req.flash('error');
+  res.render('pages/register', {csrfToken: req.csrfToken(), title: "Registrierung",messages: messages, hasErrors: messages.length >0 });
 });
 
 router.post('/registrieren',passport.authenticate('local.signup',{
