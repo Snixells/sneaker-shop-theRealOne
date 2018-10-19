@@ -108,20 +108,13 @@
 
                                     <div class="col-md-2 order-md-2">
                                         <form action="/submit-configurator" method="post">
-
-                                            <div class="form-group">
-                                                <label for="exampleInputEmail1">Email address</label>
-                                                <input type="email" class="form-control" name="exampleInputEmail1" id="exampleInputEmail1"
-                                                    aria-describedby="emailHelp" placeholder="Enter email">
-                                                <small id="emailHelp" class="form-text text-muted">We'll never share
-                                                    your email with anyone else.</small>
-                                            </div>
                                             <!-- Konfiguration / Auswahl in Dropdown-->
 
                                             <!-- Dropdown Schnürsenkel -->
                                             <p style="font-size: 18pt"><i><b>Schnürsenkel:</b></i></p>
                                             <div class="form-group">
-                                                <select class="custom-select" id="dd_schnuersenkel" onchange="Konfiguration()">
+                                                <select class="custom-select" id="dd_schnuersenkel" onchange="Konfiguration()"
+                                                    name="schoelace">
                                                     <option value="weiß">Weiß</option>
                                                     <option value="rosa"> Rosa</option>
                                                     <option value="grau"> Grau</option>
@@ -133,7 +126,8 @@
                                             <!-- Dropdown Nähte -->
                                             <p style="margin-top: 15px; font-size: 18pt"><i><b>Nähte:</b></i></p>
                                             <div class="form-group">
-                                                <select class="custom-select" id="dd_naehte" onchange="Konfiguration()">
+                                                <select class="custom-select" id="dd_naehte" onchange="Konfiguration()"
+                                                    name="seam">
                                                     <option value="weiß">Weiß</option>
                                                     <option value="rot"> Rot</option>
                                                     <option value="gruen"> Grün</option>
@@ -145,7 +139,8 @@
                                             <!-- Dropdown Muster -->
                                             <p style="margin-top: 15px; font-size: 18pt "><i><b>Muster:</b></i></p>
                                             <div class="form-group">
-                                                <select class="custom-select" id="dd_muster" onchange="Konfiguration()" name="muster">
+                                                <select class="custom-select" id="dd_muster" onchange="Konfiguration()"
+                                                    name="pattern">
                                                     <option value="none"> - </option>
                                                     <option value="zigzag"> Zick-Zack</option>
                                                     <option value="diamonds"> Diamanten</option>
@@ -155,7 +150,8 @@
                                             <!-- Dropdown Aufdruck -->
                                             <p style="margin-top: 15px; font-size: 18pt"><i><b>Aufdruck:</b></i></p>
                                             <div class="form-group">
-                                                <select class="custom-select" id="dd_aufdruck" onchange="Konfiguration()">
+                                                <select class="custom-select" id="dd_aufdruck" onchange="Konfiguration()"
+                                                    name="print">
                                                     <option value="none"> - </option>
                                                     <option value="flammen"> Flammen</option>
                                                     <option value="musik"> Musik</option>
@@ -164,9 +160,8 @@
                                             </div>
                                             <br><br>
                                             <input type="hidden" name="_csrf" value="{{csrfToken}}">
-
-                                            <button type="submit" class="btn btn-success btn-lg" id="btnSendConfiguration">Jetzt
-                                                für 45€ kaufen!</button>
+                                            <button type="submit" class="btn btn-success btn-lg" id="btnSendConfiguration">Bestellung
+                                                überprüfen</button>
 
                                         </form>
                                     </div>

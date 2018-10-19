@@ -23,7 +23,7 @@ router.post('/submit-configurator', function (req, res, next) {
   console.log(req);
   console.log("Hello");
   // res.render('configurator/configurator', {csrfToken: req.csrfToken(), title: "Konfigurator", response: req.query});
-  return res.send({request: req.query, csrfToken: req._csrf});
+  return res.render('pages/checkOrder', {request: req.body});
 });
 
 router.get('/analytics', function (req, res, next) {
