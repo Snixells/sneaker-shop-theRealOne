@@ -43,11 +43,15 @@ router.post('/registrieren', passport.authenticate('local.signup', {
 }));
 
 router.post('/einloggen', passport.authenticate('local.signin', {
-  successRedirect: '/profile',
+  successRedirect: '/loggedin',
   failureRedirect: '/',
   failureFlash: true
 }));
 
+router.get('/loggedin', function (req, res, next) {
+  //var user = req.params.
+  res.render('pages/loggedin');
+});
 
 //Testweise -->
 router.get('/profile', function (req, res, next) {

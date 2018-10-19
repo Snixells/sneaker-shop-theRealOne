@@ -1,3 +1,51 @@
-.btn {
-    margin-bottom: 7px; 
+.wrap {
+    width:720px;
+    height: 405px;
+    position: relative;
+    border: 2px solid #555555;
 }
+img {
+    position: absolute;
+}
+
+.weißer_schuh {
+    width: 720px;
+    height: 405px;
+    top: 0;
+    left: 0;
+    z-index: 0;
+}
+.gruenNaht, .blauNaht, .rotNaht {
+    width: 720px;
+    height: 405px;
+    top: 0;
+    left: 0;
+    z-index: 1;
+}
+
+.grauSchnuer, .hellblauSchnuer, .rosaSchnuer {
+    width: 720px;
+    height: 405px;
+    top: 0;
+    left: 0;
+    z-index: 2;
+}
+.diamonds, .zigzag {
+    width: 720px;
+    height: 405px;
+    top: 0;
+    left: 0;
+    z-index: 2;
+}
+
+.planet, .flammen, .musik {
+    width: 720px;
+    height: 405px;
+    top: 0;
+    left: 0;
+    z-index: 3;
+}
+
+.dd_aufdruck, .dd_muster, .dd_naehte, .dd_schnuersenkel {
+     z-index: 4;
+     }
