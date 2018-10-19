@@ -4,7 +4,7 @@ var Metadata = require('./models/metadata');
 var User = require('./models/user');
 
 
-var connectionUrl = "mongodb://localhost:27017/analytics";
+var connectionUrl = "mongodb+srv://Snixells:qouH6xQdnPt6Nsbd@cluster0-8j2qj.mongodb.net/krueger";
 
 mongoose.connect(connectionUrl);
 
@@ -71,22 +71,22 @@ mongoose.connect(connectionUrl);
 //     mongoose.disconnect();
 // });
 
-// ORDERS
+// USERS
 var user = new User({
-    username: "thomasK", 
-    password: "1234",
-    email: "thomas.krug@gmail.com", 
+    username: "admin", 
+    password: "admin",
+    email: "admin@krueger-webshop.com", 
     id: 1, 
-    forename: "Thomas", 
-    surname: "Krug",
+    forename: "Admin", 
+    surname: "Krueger",
     adress: {
-        street: "Thomasstraße", 
-        streetnumber: "73", 
-        postcode: 11112,
-        location: "Krughausen"
+        street: "Adminstraße", 
+        streetnumber: "42", 
+        postcode: 12345,
+        location: "Adminhausen"
     },
-    birthdate: new Date("July 21, 1986"),
-    phoneNumber: 123456564353
+    birthdate: new Date("July 21, 1971"),
+    phoneNumber: 3213211244
 })
 
 var userPromise = user.save();

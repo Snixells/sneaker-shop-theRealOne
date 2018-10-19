@@ -17,7 +17,9 @@ var indexRouter = require('./routes/index');
 
 var app = express();
 
-mongoose.connect('mongodb://localhost:27017');
+connectionUrl = "mongodb+srv://Snixells:qouH6xQdnPt6Nsbd@cluster0-8j2qj.mongodb.net/krueger";
+mongoose.connect(connectionUrl);
+
 require('./config/passport');
 
 // view engine setup
