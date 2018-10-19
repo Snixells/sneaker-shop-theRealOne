@@ -18,7 +18,11 @@ router.get('/configurator', function (req, res, next) {
   res.render('configurator/configurator', { csrfToken: req.csrfToken(), title: "Konfigurator" });
 });
 
-router.post('/submit-configurator', function (req, res, next) {
+router.post('/configurator', function (req, res, next) {
+  return res.render('pages/checkOrder', { configuration: req.body });
+});
+
+router.post('/submit-configuration', function (req, res, next) {
   return res.render('pages/checkOrder', { configuration: req.body });
 });
 
