@@ -72,25 +72,25 @@ mongoose.connect(connectionUrl);
 // });
 
 // USERS
-var user = new User({
-    username: "admin", 
-    password: "admin",
-    email: "admin@krueger-webshop.com", 
-    id: 1, 
-    forename: "Admin", 
-    surname: "Krueger",
-    adress: {
-        street: "Adminstraße", 
-        streetnumber: "42", 
-        postcode: 12345,
-        location: "Adminhausen"
-    },
-    birthdate: new Date("July 21, 1971"),
-    phoneNumber: 3213211244
-})
+// var user = new User({
+//     username: "admin", 
+//     password: "admin",
+//     email: "admin@krueger-webshop.com", 
+//     id: 1, 
+//     forename: "Admin", 
+//     surname: "Krueger",
+//     adress: {
+//         street: "Adminstraße", 
+//         streetnumber: "42", 
+//         postcode: 12345,
+//         location: "Adminhausen"
+//     },
+//     birthdate: new Date("July 21, 1971"),
+//     phoneNumber: 3213211244
+// })
 
-var userPromise = user.save();
+// var userPromise = user.save();
 
-userPromise.then(() => {
-    mongoose.disconnect();
-});
+// userPromise.then(() => {
+//     mongoose.disconnect();
+// });
