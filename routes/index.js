@@ -53,8 +53,13 @@ router.get('/loggedin', function (req, res, next) {
   res.render('pages/loggedin');
 });
 
+router.get('/logout', function (req, res, next) {
+  req.logout();
+  res.redirect('/');
+})
+
 //Testweise -->
-router.get('/profile', function (req, res, next) {
+router.get('/profile', isLoggedIn, function (req, res, next) {
   res.render('pages/profile');
 });
 
@@ -71,7 +76,12 @@ router.get('/imprint', function (req, res, next) {
   res.render('pages/imprint', { title: "Impressum" });
 });
 
-
-
-
 module.exports = router;
+
+// SECURITY
+function isLoggedIn(req, res, next) {
+  if (req.isAuthenticated()) {
+    return next();
+  }
+  res.redirect('/');
+}

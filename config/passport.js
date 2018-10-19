@@ -39,7 +39,7 @@ passport.use('local.signup', new LocalStrategy({
         var newUser=new User();
             newUser.username=username;
             newUser.password=newUser.encryptPassword(password);
-            newUser.surname=surname;
+            // newUser.surname=surname;
             newUser.save(function(err,result){
                 if (err){
                         return done(err);
@@ -78,6 +78,7 @@ passport.use('local.signin', new LocalStrategy({
             if (!user.validPassword(password)){
                 return done(null,false,{message: 'Wrong password.'});
             }
+            console.log(user);
             return done(null, user);
 
           
