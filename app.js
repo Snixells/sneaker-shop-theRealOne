@@ -18,6 +18,7 @@ var indexRouter = require('./routes/index');
 var app = express();
 
 mongoose.connect('mongodb://localhost:27017');
+require('./config/passport');
 
 // view engine setup
 app.engine('.hbs', expressHbs({defaultLayout: 'layout', extname: '.hbs'}));
