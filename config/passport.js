@@ -49,7 +49,7 @@ passport.use('local.signup', new LocalStrategy({
 
 }));
 
-passport.use('local.signin',new LocalStrategy({
+passport.use('local.signin', new LocalStrategy({
     usernameField: 'username',
     passwordField: 'password',
     passReqToCallback: true
@@ -61,7 +61,7 @@ passport.use('local.signin',new LocalStrategy({
         if (errors){
             var messages = [];
             errors.forEach(function(error){
-                message.push(error.msg);
+                messages.push(error.msg);
 
             });
             return done(null, false, req.flash('error',messages));

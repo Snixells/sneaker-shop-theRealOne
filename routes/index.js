@@ -19,20 +19,7 @@ router.get('/configurator', function (req, res, next) {
 });
 
 router.post('/submit-configurator', function (req, res, next) {
-  // res.render('configurator/configurator', {csrfToken: req.csrfToken(), title: "Konfigurator" });
-
-  console.log(req.body.pattern);
-
-  if (req.body.pattern == "none") {
-    req.body.pattern = "keine Auswahl";
-  }
-  if (req.body.print == "none") {
-    req.body.print = "keine Auswahl";
-  }
-
-  console.log(req.body.shoelace);
   return res.render('pages/checkOrder', { configuration: req.body });
-  // return res.send({configuration: req.body});
 });
 
 router.get('/analytics', function (req, res, next) {
