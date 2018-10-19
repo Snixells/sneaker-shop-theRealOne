@@ -32,5 +32,5 @@ var metadata = new Schema({
     }
 })
 
-module.exports = mongoose.model('UserSchema', metadata);
+module.exports = mongoose.model('MetadataSchema', metadata);
 
