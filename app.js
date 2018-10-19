@@ -37,7 +37,7 @@ app.use(session({
   secret: 'Kruegerid',
   resave: false,
   saveUninitialized: false,
-  store: new MongoStore({ mongooceConnection: mongoose.connection}),
+  store: new MongoStore({ mongooseConnection: mongoose.connection}),
   cookie: { maxAge:180 * 60 * 1000}
 }));
 app.use(flash());
