@@ -19,11 +19,11 @@ router.get('/configurator', function (req, res, next) {
 });
 
 router.post('/configurator', function (req, res, next) {
-  return res.render('pages/checkOrder', { configuration: req.body });
+  return res.render('pages/checkOrder', { configuration: req.body, csrfToken: req.csrfToken() });
 });
 
 router.post('/submit-configuration', function (req, res, next) {
-  return res.render('pages/checkOrder', { configuration: req.body });
+  return res.render('pages/configurationSent', { configuration: req.body });
 });
 
 router.get('/analytics', function (req, res, next) {

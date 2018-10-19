@@ -190,7 +190,7 @@
                                     switch (document.getElementById('dd_schnuersenkel').value) {
 
 
-                                        case "weiß":
+                                        case "Weiß":
                                             var grundfarbe_schuh = document.getElementById('weißer_schuh');
                                             grundfarbe_schuh.style.display = 'block';
 
@@ -207,9 +207,10 @@
                                             break;
 
 
-                                        case "rosa":
+                                        case "Rosa":
                                             var rosaSchnuer = document.getElementById('rosaSchnuer');
                                             rosaSchnuer.style.display = 'block';
+                                            console.log(rosaSchnuer.style);
 
                                             //andere Farben nicht anzeigen
                                             var grauSchnuer = document.getElementById('grauSchnuer');
@@ -220,7 +221,7 @@
 
                                             break;
 
-                                        case "grau":
+                                        case "Grau":
                                             var grauSchnuer = document.getElementById('grauSchnuer');
                                             grauSchnuer.style.display = 'block';
 
@@ -233,7 +234,7 @@
 
                                             break;
 
-                                        case "hellblau":
+                                        case "Hellblau":
                                             var hellblauSchnuer = document.getElementById('hellblauSchnuer');
                                             hellblauSchnuer.style.display = 'block';
 
@@ -252,7 +253,7 @@
 
                                     //Auswerten dd_naehte: 
                                     switch (document.getElementById('dd_naehte').value) {
-                                        case "weiß":
+                                        case "Weiß":
 
                                             var grundfarbe_schuh = document.getElementById('weißer_schuh');
                                             grundfarbe_schuh.style.display = 'block';
@@ -269,7 +270,7 @@
 
                                             break;
 
-                                        case "blau":
+                                        case "Blau":
                                             var blauNaht = document.getElementById('blauNaht');
                                             blauNaht.style.display = 'block';
 
@@ -281,7 +282,7 @@
                                             gruenNaht.style.display = 'none';
                                             break;
 
-                                        case "rot":
+                                        case "Rot":
                                             var rotNaht = document.getElementById('rotNaht');
                                             rotNaht.style.display = 'block';
 
@@ -294,7 +295,7 @@
 
                                             break;
 
-                                        case "gruen":
+                                        case "Grün":
                                             var gruenNaht = document.getElementById('gruenNaht');
                                             gruenNaht.style.display = 'block';
 
@@ -315,7 +316,7 @@
                                     //Auswerten dd_aufdruck:
                                     switch (document.getElementById('dd_aufdruck').value) {
 
-                                        case "none":
+                                        case "Keine Angabe":
 
                                             //Aufdrucke auf none
                                             var planet = document.getElementById('planet');
@@ -329,7 +330,7 @@
 
                                             break;
 
-                                        case "flammen":
+                                        case "Flammen":
                                             var flammen = document.getElementById('flammen');
                                             flammen.style.display = 'block';
 
@@ -343,7 +344,7 @@
                                             break;
 
 
-                                        case "planet":
+                                        case "Planet":
                                             var planet = document.getElementById('planet');
                                             planet.style.display = 'block';
 
@@ -356,7 +357,7 @@
 
                                             break;
 
-                                        case "musik":
+                                        case "Musik":
                                             var musik = document.getElementById('musik');
                                             musik.style.display = 'block';
 
@@ -375,7 +376,7 @@
                                     //Auswerten dd_muster:
                                     switch (document.getElementById('dd_muster').value) {
 
-                                        case "none":
+                                        case "Keine Angabe":
 
                                             //Muster auf none
                                             var diamonds = document.getElementById('diamonds');
@@ -386,7 +387,7 @@
 
                                             break;
 
-                                        case "diamonds":
+                                        case "Diamanten":
                                             var diamonds = document.getElementById('diamonds');
                                             diamonds.style.display = 'block';
 
@@ -397,7 +398,7 @@
                                             break;
 
 
-                                        case "zigzag":
+                                        case "Zick-Zack":
                                             var zigzag = document.getElementById('zigzag');
                                             zigzag.style.display = 'block';
 
@@ -406,16 +407,9 @@
                                             diamonds.style.display = 'none';
 
                                             break;
-
-
-
                                     }
 
                                 }
-
-
-
-
 
                             </script>
                         </div>

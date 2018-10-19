@@ -42,7 +42,10 @@
 
                                 <form class="form-inline" action="/submit-configuration" method="post">
                                     <input type="hidden" name="_csrf" value="{{csrfToken}}">
-                                    <input type="hidden" name="configuration" value="{{configuration}}">
+                                    <input type="hidden" name="shoelace" value="{{configuration.shoelace}}">
+                                    <input type="hidden" name="seam" value="{{configuration.seam}}">
+                                    <input type="hidden" name="pattern" value="{{configuration.pattern}}">
+                                    <input type="hidden" name="print" value="{{configuration.print}}">
                                     <button type="submit" class="btn btn-primary mb-2">Bestätigen und Absenden</button>
                                 </form>
 
