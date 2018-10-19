@@ -5,6 +5,7 @@ var cookieParser = require('cookie-parser');
 var logger = require('morgan');
 var expressHbs = require('express-handlebars');
 var mongoose = require('mongoose');
+var session = require('express-session');
 
 var indexRouter = require('./routes/index');
 
@@ -12,7 +13,7 @@ var indexRouter = require('./routes/index');
 
 var app = express();
 
-mongoose.connect('mongodb://localhost:27017')
+mongoose.connect('mongodb://localhost:27017');
 
 // view engine setup
 app.engine('.hbs', expressHbs({defaultLayout: 'layout', extname: '.hbs'}));
@@ -22,7 +23,9 @@ app.use(logger('dev'));
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
+app.use(session({secret: 'Kruegerid',resave: false,saveUninitialized: false }));
 app.use(express.static(path.join(__dirname, 'public')));
+
 
 app.use('/', indexRouter);
 

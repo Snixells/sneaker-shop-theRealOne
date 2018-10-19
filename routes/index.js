@@ -1,5 +1,12 @@
 var express = require('express');
 var router = express.Router();
+
+var csrf = require('csurf');
+
+var csrfProtection = csrf();
+
+router.use(csrfProtection);
+
 // var WordSchema = require('../models/word');
 
 /* GET home page. */
@@ -17,7 +24,7 @@ router.get('/analytics', function (req, res, next) {
 
 
 router.get('/registrieren', function (req, res, next) {
-  res.render('pages/register', { title: "Registrierung" });
+  res.render('pages/register', {csrfToken: req.csrfToken(), title: "Registrierung" });
 });
 
 router.get('/contact', function (req, res, next) {
