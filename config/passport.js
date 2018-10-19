@@ -42,7 +42,8 @@ passport.use('local.signup', new LocalStrategy({
 passport.use('local.signin',new LocalStrategy({
     usernameField: 'username',
     passwordField: 'password',
-    passReqToCallback: true},
+    passReqToCallback: true
+},
     function(req,username,password,done){
         req.checkBody('username','Invalid username').notEmpty();
         req.checkBody('password','Invalid password').notEmpty();

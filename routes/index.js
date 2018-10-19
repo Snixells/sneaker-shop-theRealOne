@@ -15,7 +15,15 @@ router.get('/', function (req, res, next) {
 });
 
 router.get('/configurator', function (req, res, next) {
-  res.render('configurator/configurator', { title: "Konfigurator" });
+  res.render('configurator/configurator', { csrfToken: req.csrfToken(), title: "Konfigurator" });
+});
+
+router.post('/submit-configurator', function (req, res, next) {
+  // res.render('configurator/configurator', {csrfToken: req.csrfToken(), title: "Konfigurator" });
+  console.log(req);
+  console.log("Hello");
+  // res.render('configurator/configurator', {csrfToken: req.csrfToken(), title: "Konfigurator", response: req.query});
+  return res.send({request: req.render, csrfToken: req.csrfToken()});
 });
 
 router.get('/analytics', function (req, res, next) {
