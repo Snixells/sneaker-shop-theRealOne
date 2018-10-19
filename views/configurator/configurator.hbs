@@ -1,5 +1,17 @@
-<style>
-    /* Generator */
+<div class="col-12">
+    <div class="jumbotron">
+        <h4 class="display-4">Designen Sie Ihren persönlichen Schuh:</h4>
+        <br>
+        <div id="page-wrapper">
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="panel panel-default">
+                        <div class="panel-body">
+
+                            <style>
+
+                                /* Generator */
+
 .wrap {
        width:720px;
        height: 405px;
@@ -54,311 +66,355 @@
    
 </style>
 
-<div class="container-fluid">
-    <div class="row">
+                            <div class="container-fluid">
+                                <div class="row">
 
-        <div class="col-md-13 order-md-1 ">
-            <!-- Bildanzeige des Konfigurators  -->
-            <div class="wrap">
-                <!-- weißer Schuh -->
-                <img class="weißer_schuh" id="weißer_schuh" src="originalschuh.png">
+                                    <div class="col-md-13 order-md-1 ">
+                                        <!-- Bildanzeige des Konfigurators  -->
+                                        <div class="wrap">
+                                            <!-- weißer Schuh -->
+                                            <img class="weißer_schuh" id="weißer_schuh" src="originalschuh.png">
 
-                <!-- Farben/Aufdrucke/Muster -->
+                                            <!-- Farben/Aufdrucke/Muster -->
 
-                <!-- Schnürsenkel -->
-                <img class="grauSchnuer" id="grauSchnuer" src="grauSchnuer.png" style="display: none;">
-                <img class="rosaSchnuer" id="rosaSchnuer" src="rosaSchnuer.png" style="display: none;">
-                <img class="hellblauSchnuer" id="hellblauSchnuer" src="blauSchnuer.png" style="display: none;">
+                                            <!-- Schnürsenkel -->
+                                            <img class="grauSchnuer" id="grauSchnuer" src="grauSchnuer.png" style="display: none;">
+                                            <img class="rosaSchnuer" id="rosaSchnuer" src="rosaSchnuer.png" style="display: none;">
+                                            <img class="hellblauSchnuer" id="hellblauSchnuer" src="blauSchnuer.png"
+                                                style="display: none;">
 
-                <!-- Nähte -->
-                <img class="gruenNaht" id="gruenNaht" src="gruenNaht.png" style="display: none;">
-                <img class="rotNaht" id="rotNaht" src="rotNaht.png" style="display: none;">
-                <img class="blauNaht" id="blauNaht" src="blauNaht.png" style="display: none;">
+                                            <!-- Nähte -->
+                                            <img class="gruenNaht" id="gruenNaht" src="gruenNaht.png" style="display: none;">
+                                            <img class="rotNaht" id="rotNaht" src="rotNaht.png" style="display: none;">
+                                            <img class="blauNaht" id="blauNaht" src="blauNaht.png" style="display: none;">
 
-                <!-- Aufdrucke -->
-                <img class="flammen" id="flammen" src="flammen.png" style="display: none;">
-                <img class="planet" id="planet" src="planet.png" style="display: none;">
-                <img class="musik" id="musik" src="musik.png" style="display: none;">
+                                            <!-- Aufdrucke -->
+                                            <img class="flammen" id="flammen" src="flammen.png" style="display: none;">
+                                            <img class="planet" id="planet" src="planet.png" style="display: none;">
+                                            <img class="musik" id="musik" src="musik.png" style="display: none;">
 
-                <!-- Muster -->
-                <img class="diamonds" id="diamonds" src="diamonds.png" style="display: none;">
-                <img class="zigzag" id="zigzag" src="zigzag.png" style="display: none;">
+                                            <!-- Muster -->
+                                            <img class="diamonds" id="diamonds" src="diamonds.png" style="display: none;">
+                                            <img class="zigzag" id="zigzag" src="zigzag.png" style="display: none;">
 
+                                        </div>
+                                        <br><br>
+                                        <button type="button" class="btn btn-success btn-lg">Jetzt für 45€ kaufen!</button>
+                                    </div>
+
+                                    <div class="col-md-2 order-md-2">
+                                        <!-- Konfiguration / Auswahl in Dropdown-->
+
+                                        <!-- Dropdown Schnürsenkel -->
+                                        <p style="font-size: 18pt"><i><b>Schnürsenkel:</b></i></p>
+                                        <div class="input-group">
+                                            <select class="custom-select" id="dd_schnuersenkel" onchange="Konfiguration()">
+                                                <option value="weiß">Weiß</option>
+                                                <option value="rosa"> Rosa</option>
+                                                <option value="grau"> Grau</option>
+                                                <option value="hellblau"> Hellblau</option>
+                                            </select>
+                                        </div>
+
+
+                                        <!-- Dropdown Nähte -->
+                                        <p style="margin-top: 15px; font-size: 18pt"><i><b>Nähte:</b></i></p>
+                                        <div class="input-group">
+                                            <select class="custom-select" id="dd_naehte" onchange="Konfiguration()">
+                                                <option value="weiß">Weiß</option>
+                                                <option value="rot"> Rot</option>
+                                                <option value="gruen"> Grün</option>
+                                                <option value="blau"> Blau</option>
+                                            </select>
+                                        </div>
+
+
+                                        <!-- Dropdown Muster -->
+                                        <p style="margin-top: 15px; font-size: 18pt "><i><b>Muster:</b></i></p>
+                                        <div class="input-group">
+                                            <select class="custom-select" id="dd_muster" onchange="Konfiguration()">
+                                                <option value="none"> - </option>
+                                                <option value="zigzag"> Zick-Zack</option>
+                                                <option value="diamonds"> Diamanten</option>
+                                            </select>
+                                        </div>
+
+                                        <!-- Dropdown Aufdruck -->
+                                        <p style="margin-top: 15px; font-size: 18pt"><i><b>Aufdruck:</b></i></p>
+                                        <div class="input-group">
+                                            <select class="custom-select" id="dd_aufdruck" onchange="Konfiguration()">
+                                                <option value="none"> - </option>
+                                                <option value="flammen"> Flammen</option>
+                                                <option value="musik"> Musik</option>
+                                                <option value="planet"> Planet</option>
+                                            </select>
+                                        </div>
+                                        <br><br>
+                                        <button onclick="Zurücksetzen(); Konfiguration()" class="btn btn-secondary">Konfiguration
+                                            zurücksetzen</button>
+
+                                    </div>
+                                </div>
+                            </div>
+
+
+
+
+
+
+                            <script>
+                                //Zurücksetzen
+                                //function Zurücksetzen(dd_schnuersenkel, dd_naehte, dd_aufdruck, dd_muster) {
+                                function Zurücksetzen() {
+                                    var elements = document.getElementsByTagName('select');
+                                    for (var i = 0; i < elements.length; i++) {
+                                        elements[i].selectedIndex = 0;
+                                    }
+                                }
+
+                                //Logik des Konfigurators
+                                function Konfiguration(dd_schnuersenkel, dd_naehte, dd_aufdruck, dd_muster) {
+
+                                    //Auswerten dd_schnuersenkel:            
+                                    switch (document.getElementById('dd_schnuersenkel').value) {
+
+
+                                        case "weiß":
+                                            var grundfarbe_schuh = document.getElementById('weißer_schuh');
+                                            grundfarbe_schuh.style.display = 'block';
+
+                                            //Farben auf none
+                                            var rosaSchnuer = document.getElementById('rosaSchnuer');
+                                            rosaSchnuer.style.display = 'none';
+
+                                            var grauSchnuer = document.getElementById('grauSchnuer');
+                                            grauSchnuer.style.display = 'none';
+
+                                            var hellblauSchnuer = document.getElementById('hellblauSchnuer');
+                                            hellblauSchnuer.style.display = 'none';
+
+                                            break;
+
+
+                                        case "rosa":
+                                            var rosaSchnuer = document.getElementById('rosaSchnuer');
+                                            rosaSchnuer.style.display = 'block';
+
+                                            //andere Farben nicht anzeigen
+                                            var grauSchnuer = document.getElementById('grauSchnuer');
+                                            grauSchnuer.style.display = 'none';
+
+                                            var hellblauSchnuer = document.getElementById('hellblauSchnuer');
+                                            hellblauSchnuer.style.display = 'none';
+
+                                            break;
+
+                                        case "grau":
+                                            var grauSchnuer = document.getElementById('grauSchnuer');
+                                            grauSchnuer.style.display = 'block';
+
+                                            //andere Farben nicht anzeigen
+                                            var rosaSchnuer = document.getElementById('rosaSchnuer');
+                                            rosaSchnuer.style.display = 'none';
+
+                                            var hellblauSchnuer = document.getElementById('hellblauSchnuer');
+                                            hellblauSchnuer.style.display = 'none';
+
+                                            break;
+
+                                        case "hellblau":
+                                            var hellblauSchnuer = document.getElementById('hellblauSchnuer');
+                                            hellblauSchnuer.style.display = 'block';
+
+                                            //andere Farben nicht anzeigen
+                                            var rosaSchnuer = document.getElementById('rosaSchnuer');
+                                            rosaSchnuer.style.display = 'none';
+
+                                            var grauSchnuer = document.getElementById('grauSchnuer');
+                                            grauSchnuer.style.display = 'none';
+
+                                            break;
+
+
+
+                                    }
+
+                                    //Auswerten dd_naehte: 
+                                    switch (document.getElementById('dd_naehte').value) {
+                                        case "weiß":
+
+                                            var grundfarbe_schuh = document.getElementById('weißer_schuh');
+                                            grundfarbe_schuh.style.display = 'block';
+
+                                            //andere Farben nicht anzeigen
+                                            var blauNaht = document.getElementById('blauNaht');
+                                            blauNaht.style.display = 'none';
+
+                                            var gruenNaht = document.getElementById('gruenNaht');
+                                            gruenNaht.style.display = 'none';
+
+                                            var rotNaht = document.getElementById('rotNaht');
+                                            rotNaht.style.display = 'none';
+
+                                            break;
+
+                                        case "blau":
+                                            var blauNaht = document.getElementById('blauNaht');
+                                            blauNaht.style.display = 'block';
+
+                                            //andere Farben nicht anzeigen
+                                            var rotNaht = document.getElementById('rotNaht');
+                                            rotNaht.style.display = 'none';
+
+                                            var gruenNaht = document.getElementById('gruenNaht');
+                                            gruenNaht.style.display = 'none';
+                                            break;
+
+                                        case "rot":
+                                            var rotNaht = document.getElementById('rotNaht');
+                                            rotNaht.style.display = 'block';
+
+                                            //andere Farben nicht anzeigen
+                                            var blauNaht = document.getElementById('blauNaht');
+                                            blauNaht.style.display = 'none';
+
+                                            var gruenNaht = document.getElementById('gruenNaht');
+                                            gruenNaht.style.display = 'none';
+
+                                            break;
+
+                                        case "gruen":
+                                            var gruenNaht = document.getElementById('gruenNaht');
+                                            gruenNaht.style.display = 'block';
+
+                                            //andere Farben nicht anzeigen
+                                            var blauNaht = document.getElementById('blauNaht');
+                                            blauNaht.style.display = 'none';
+
+                                            var rotNaht = document.getElementById('rotNaht');
+                                            rotNaht.style.display = 'none';
+
+                                            break;
+
+
+                                    }
+
+
+
+                                    //Auswerten dd_aufdruck:
+                                    switch (document.getElementById('dd_aufdruck').value) {
+
+                                        case "none":
+
+                                            //Aufdrucke auf none
+                                            var planet = document.getElementById('planet');
+                                            planet.style.display = 'none';
+
+                                            var musik = document.getElementById('musik');
+                                            musik.style.display = 'none';
+
+                                            var flammen = document.getElementById('flammen');
+                                            flammen.style.display = 'none';
+
+                                            break;
+
+                                        case "flammen":
+                                            var flammen = document.getElementById('flammen');
+                                            flammen.style.display = 'block';
+
+                                            //Aufdrucke auf none
+                                            var planet = document.getElementById('planet');
+                                            planet.style.display = 'none';
+
+                                            var musik = document.getElementById('musik');
+                                            musik.style.display = 'none';
+
+                                            break;
+
+
+                                        case "planet":
+                                            var planet = document.getElementById('planet');
+                                            planet.style.display = 'block';
+
+                                            //Aufdrucke auf none
+                                            var flammen = document.getElementById('flammen');
+                                            flammen.style.display = 'none';
+
+                                            var musik = document.getElementById('musik');
+                                            musik.style.display = 'none';
+
+                                            break;
+
+                                        case "musik":
+                                            var musik = document.getElementById('musik');
+                                            musik.style.display = 'block';
+
+                                            //Aufdrucke auf none
+                                            var flammen = document.getElementById('flammen');
+                                            flammen.style.display = 'none';
+
+                                            var planet = document.getElementById('planet');
+                                            planet.style.display = 'none';
+
+                                            break;
+
+
+
+                                    }
+                                    //Auswerten dd_muster:
+                                    switch (document.getElementById('dd_muster').value) {
+
+                                        case "none":
+
+                                            //Muster auf none
+                                            var diamonds = document.getElementById('diamonds');
+                                            diamonds.style.display = 'none';
+
+                                            var zigzag = document.getElementById('zigzag');
+                                            zigzag.style.display = 'none';
+
+                                            break;
+
+                                        case "diamonds":
+                                            var diamonds = document.getElementById('diamonds');
+                                            diamonds.style.display = 'block';
+
+                                            //Muster auf none
+                                            var zigzag = document.getElementById('zigzag');
+                                            zigzag.style.display = 'none';
+
+                                            break;
+
+
+                                        case "zigzag":
+                                            var zigzag = document.getElementById('zigzag');
+                                            zigzag.style.display = 'block';
+
+                                            //Muster auf none
+                                            var diamonds = document.getElementById('diamonds');
+                                            diamonds.style.display = 'none';
+
+                                            break;
+
+
+
+                                    }
+
+                                }
+
+
+
+
+
+                            </script>
+                        </div>
+                        <!-- /.panel-body -->
+                    </div>
+                    <!-- /.panel -->
+                </div>
+                <!-- /.col-lg-12 -->
             </div>
-            <br><br>
-            <button type="button" class="btn btn-success btn-lg">Jetzt für 45€ kaufen!</button>
+            <!-- /.row -->
         </div>
-
-        <div class="col-md-2 order-md-2">
-            <!-- Konfiguration / Auswahl in Dropdown-->
-
-            <!-- Dropdown Schnürsenkel -->
-            <p style="font-size: 18pt"><i><b>Schnürsenkel:</b></i></p>
-            <div class="input-group">
-                <select class="custom-select" id="dd_schnuersenkel" onchange="Konfiguration()">
-                    <option value="weiß">Weiß</option>
-                    <option value="rosa"> Rosa</option>
-                    <option value="grau"> Grau</option>
-                    <option value="hellblau"> Hellblau</option>
-                </select>
-            </div>
-
-
-            <!-- Dropdown Nähte -->
-            <p style="margin-top: 15px; font-size: 18pt"><i><b>Nähte:</b></i></p>
-            <div class="input-group">
-                <select class="custom-select" id="dd_naehte" onchange="Konfiguration()">
-                    <option value="weiß">Weiß</option>
-                    <option value="rot"> Rot</option>
-                    <option value="gruen"> Grün</option>
-                    <option value="blau"> Blau</option>
-                </select>
-            </div>
-
-
-            <!-- Dropdown Muster -->
-            <p style="margin-top: 15px; font-size: 18pt "><i><b>Muster:</b></i></p>
-            <div class="input-group">
-                <select class="custom-select" id="dd_muster" onchange="Konfiguration()">
-                    <option value="none"> - </option>
-                    <option value="zigzag"> Zick-Zack</option>
-                    <option value="diamonds"> Diamanten</option>
-                </select>
-            </div>
-
-            <!-- Dropdown Aufdruck -->
-            <p style="margin-top: 15px; font-size: 18pt"><i><b>Aufdruck:</b></i></p>
-            <div class="input-group">
-                <select class="custom-select" id="dd_aufdruck" onchange="Konfiguration()">
-                    <option value="none"> - </option>
-                    <option value="flammen"> Flammen</option>
-                    <option value="musik"> Musik</option>
-                    <option value="planet"> Planet</option>
-                </select>
-            </div>
-            <br><br>
-            <button onclick="Zurücksetzen(); Konfiguration()" class="btn btn-secondary">Konfiguration zurücksetzen</button>
-
-        </div>
+        <!-- /#page-wrapper -->
     </div>
-</div>
-
-
-
-
-
-
-<script>
-    //Zurücksetzen
-    //function Zurücksetzen(dd_schnuersenkel, dd_naehte, dd_aufdruck, dd_muster) {
-    function Zurücksetzen() {
-        var elements = document.getElementsByTagName('select');
-        for (var i = 0; i < elements.length; i++) {
-            elements[i].selectedIndex = 0;
-        }
-    }
-    //Logik des Konfigurators
-    function Konfiguration(dd_schnuersenkel, dd_naehte, dd_aufdruck, dd_muster) {
-
-        //Auswerten dd_schnuersenkel:            
-        switch (document.getElementById('dd_schnuersenkel').value) {
-
-
-            case "weiß":
-                var grundfarbe_schuh = document.getElementById('weißer_schuh');
-                grundfarbe_schuh.style.display = 'block';
-
-                //Farben auf none
-                var rosaSchnuer = document.getElementById('rosaSchnuer');
-                rosaSchnuer.style.display = 'none';
-                var grauSchnuer = document.getElementById('grauSchnuer');
-                grauSchnuer.style.display = 'none';
-
-                var hellblauSchnuer = document.getElementById('hellblauSchnuer');
-                hellblauSchnuer.style.display = 'none';
-
-                break;
-
-            case "rosa":
-                var rosaSchnuer = document.getElementById('rosaSchnuer');
-                rosaSchnuer.style.display = 'block';
-                //andere Farben nicht anzeigen
-                var grauSchnuer = document.getElementById('grauSchnuer');
-                grauSchnuer.style.display = 'none';
-                var hellblauSchnuer = document.getElementById('hellblauSchnuer');
-                hellblauSchnuer.style.display = 'none';
-
-                break;
-            case "grau":
-                var grauSchnuer = document.getElementById('grauSchnuer');
-                grauSchnuer.style.display = 'block';
-                //andere Farben nicht anzeigen
-                var rosaSchnuer = document.getElementById('rosaSchnuer');
-                rosaSchnuer.style.display = 'none';
-                var hellblauSchnuer = document.getElementById('hellblauSchnuer');
-                hellblauSchnuer.style.display = 'none';
-
-                break;
-            case "hellblau":
-                var hellblauSchnuer = document.getElementById('hellblauSchnuer');
-                hellblauSchnuer.style.display = 'block';
-
-                //andere Farben nicht anzeigen
-                var rosaSchnuer = document.getElementById('rosaSchnuer');
-                rosaSchnuer.style.display = 'none';
-                var grauSchnuer = document.getElementById('grauSchnuer');
-                grauSchnuer.style.display = 'none';
-
-                break;
-
-
-        }
-
-        //Auswerten dd_naehte: 
-        switch (document.getElementById('dd_naehte').value) {
-            case "weiß":
-                var grundfarbe_schuh = document.getElementById('weißer_schuh');
-                grundfarbe_schuh.style.display = 'block';
-
-                //andere Farben nicht anzeigen
-                var blauNaht = document.getElementById('blauNaht');
-                blauNaht.style.display = 'none';
-
-                var gruenNaht = document.getElementById('gruenNaht');
-                gruenNaht.style.display = 'none';
-
-                var rotNaht = document.getElementById('rotNaht');
-                rotNaht.style.display = 'none';
-
-                break;
-            case "blau":
-                var blauNaht = document.getElementById('blauNaht');
-                blauNaht.style.display = 'block';
-                //andere Farben nicht anzeigen
-                var rotNaht = document.getElementById('rotNaht');
-                rotNaht.style.display = 'none';
-
-                var gruenNaht = document.getElementById('gruenNaht');
-                gruenNaht.style.display = 'none';
-                break;
-            case "rot":
-                var rotNaht = document.getElementById('rotNaht');
-                rotNaht.style.display = 'block';
-
-                //andere Farben nicht anzeigen
-                var blauNaht = document.getElementById('blauNaht');
-                blauNaht.style.display = 'none';
-
-                var gruenNaht = document.getElementById('gruenNaht');
-                gruenNaht.style.display = 'none';
-
-                break;
-
-            case "gruen":
-                var gruenNaht = document.getElementById('gruenNaht');
-                gruenNaht.style.display = 'block';
-
-                //andere Farben nicht anzeigen
-                var blauNaht = document.getElementById('blauNaht');
-                blauNaht.style.display = 'none';
-
-                var rotNaht = document.getElementById('rotNaht');
-                rotNaht.style.display = 'none';
-
-                break;
-
-        }
-
-
-
-        //Auswerten dd_aufdruck:
-        switch (document.getElementById('dd_aufdruck').value) {
-
-            case "none":
-
-                //Aufdrucke auf none
-                var planet = document.getElementById('planet');
-                planet.style.display = 'none';
-                var musik = document.getElementById('musik');
-                musik.style.display = 'none';
-
-                var flammen = document.getElementById('flammen');
-                flammen.style.display = 'none';
-
-                break;
-
-            case "flammen":
-                var flammen = document.getElementById('flammen');
-                flammen.style.display = 'block';
-
-                //Aufdrucke auf none
-                var planet = document.getElementById('planet');
-                planet.style.display = 'none';
-                var musik = document.getElementById('musik');
-                musik.style.display = 'none';
-
-                break;
-
-            case "planet":
-                var planet = document.getElementById('planet');
-                planet.style.display = 'block';
-                //Aufdrucke auf none
-                var flammen = document.getElementById('flammen');
-                flammen.style.display = 'none';
-                var musik = document.getElementById('musik');
-                musik.style.display = 'none';
-
-                break;
-            case "musik":
-                var musik = document.getElementById('musik');
-                musik.style.display = 'block';
-                //Aufdrucke auf none
-                var flammen = document.getElementById('flammen');
-                flammen.style.display = 'none';
-                var planet = document.getElementById('planet');
-                planet.style.display = 'none';
-
-                break;
-
-
-        }
-        //Auswerten dd_muster:
-        switch (document.getElementById('dd_muster').value) {
-
-            case "none":
-
-                //Muster auf none
-                var diamonds = document.getElementById('diamonds');
-                diamonds.style.display = 'none';
-
-                var zigzag = document.getElementById('zigzag');
-                zigzag.style.display = 'none';
-
-                break;
-
-            case "diamonds":
-                var diamonds = document.getElementById('diamonds');
-                diamonds.style.display = 'block';
-
-                //Muster auf none
-                var zigzag = document.getElementById('zigzag');
-                zigzag.style.display = 'none';
-
-                break;
-
-            case "zigzag":
-                var zigzag = document.getElementById('zigzag');
-                zigzag.style.display = 'block';
-                //Muster auf none
-                var diamonds = document.getElementById('diamonds');
-                diamonds.style.display = 'none';
-                break;
-
-        }
-
-    }
-
-
-
-
-</script>
