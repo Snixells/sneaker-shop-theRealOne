@@ -108,6 +108,14 @@
 
                                     <div class="col-md-2 order-md-2">
                                         <form action="/submit-configurator" method="post">
+
+                                            <div class="form-group">
+                                                <label for="exampleInputEmail1">Email address</label>
+                                                <input type="email" class="form-control" name="exampleInputEmail1" id="exampleInputEmail1"
+                                                    aria-describedby="emailHelp" placeholder="Enter email">
+                                                <small id="emailHelp" class="form-text text-muted">We'll never share
+                                                    your email with anyone else.</small>
+                                            </div>
                                             <!-- Konfiguration / Auswahl in Dropdown-->
 
                                             <!-- Dropdown Schnürsenkel -->
@@ -137,7 +145,7 @@
                                             <!-- Dropdown Muster -->
                                             <p style="margin-top: 15px; font-size: 18pt "><i><b>Muster:</b></i></p>
                                             <div class="form-group">
-                                                <select class="custom-select" id="dd_muster" onchange="Konfiguration()">
+                                                <select class="custom-select" id="dd_muster" onchange="Konfiguration()" name="muster">
                                                     <option value="none"> - </option>
                                                     <option value="zigzag"> Zick-Zack</option>
                                                     <option value="diamonds"> Diamanten</option>

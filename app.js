@@ -9,14 +9,14 @@ var mongoose = require('mongoose');
 var session = require('express-session');
 var passport = require('passport');
 var flash = require('connect-flash');
-var validator = require('express-validator');
+
 
 var indexRouter = require('./routes/index');
 
 
 
 var app = express();
-
+var validator = require('express-validator');
 connectionUrl = "mongodb+srv://Snixells:qouH6xQdnPt6Nsbd@cluster0-8j2qj.mongodb.net/krueger";
 mongoose.connect(connectionUrl);
 
@@ -29,6 +29,7 @@ app.set('view engine', '.hbs');
 app.use(logger('dev'));
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
+app.use(validator());
 app.use(cookieParser());
 app.use(session({secret: 'Kruegerid',resave: false,saveUninitialized: false }));
 app.use(flash());
