@@ -5,12 +5,12 @@ mongoose.connect("mongodb://localhost:27017/analytics");
 
 
 var order = new Order({
-    date: this.date(),
-    userID: 123, 
-    orderID: 1234, 
+    date: new Date("July 21, 1983 01:15:00"),
+    userID: 123,
+    orderID: 1234,
     positions: 3,
     price: 123,
-    paymentMethod = "Paypal",
+    paymentMethod : "Paypal",
 
     configuration: {
         shoelace: "gruen",
@@ -20,6 +20,8 @@ var order = new Order({
     }
 })
 
-order.save(() =>  {
-    
-})
+var savePromise = order.save();
+
+savePromise.then(() => {
+    mongoose.disconnect();
+});
