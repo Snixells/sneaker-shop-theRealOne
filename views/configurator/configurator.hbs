@@ -99,60 +99,62 @@
 
                                         </div>
                                         <br><br>
-                                        <button type="submit" class="btn btn-success btn-lg" onclick="testF">Jetzt für 45€ kaufen!</button>
+                                        <button type="submit" class="btn btn-success btn-lg" id="btnSendConfiguration">Jetzt
+                                            für 45€ kaufen!</button>
                                     </div>
 
                                     <div class="col-md-2 order-md-2">
-                                        <!-- Konfiguration / Auswahl in Dropdown-->
+                                        <form action="/submit-configurator" method="post">
+                                            <!-- Konfiguration / Auswahl in Dropdown-->
 
-                                        <!-- Dropdown Schnürsenkel -->
-                                        <p style="font-size: 18pt"><i><b>Schnürsenkel:</b></i></p>
-                                        <div class="input-group">
-                                            <select class="custom-select" id="dd_schnuersenkel" onchange="Konfiguration()">
-                                                <option value="weiß">Weiß</option>
-                                                <option value="rosa"> Rosa</option>
-                                                <option value="grau"> Grau</option>
-                                                <option value="hellblau"> Hellblau</option>
-                                            </select>
-                                        </div>
-
-
-                                        <!-- Dropdown Nähte -->
-                                        <p style="margin-top: 15px; font-size: 18pt"><i><b>Nähte:</b></i></p>
-                                        <div class="input-group">
-                                            <select class="custom-select" id="dd_naehte" onchange="Konfiguration()">
-                                                <option value="weiß">Weiß</option>
-                                                <option value="rot"> Rot</option>
-                                                <option value="gruen"> Grün</option>
-                                                <option value="blau"> Blau</option>
-                                            </select>
-                                        </div>
+                                            <!-- Dropdown Schnürsenkel -->
+                                            <p style="font-size: 18pt"><i><b>Schnürsenkel:</b></i></p>
+                                            <div class="form-group">
+                                                <select class="custom-select" id="dd_schnuersenkel" onchange="Konfiguration()">
+                                                    <option value="weiß">Weiß</option>
+                                                    <option value="rosa"> Rosa</option>
+                                                    <option value="grau"> Grau</option>
+                                                    <option value="hellblau"> Hellblau</option>
+                                                </select>
+                                            </div>
 
 
-                                        <!-- Dropdown Muster -->
-                                        <p style="margin-top: 15px; font-size: 18pt "><i><b>Muster:</b></i></p>
-                                        <div class="input-group">
-                                            <select class="custom-select" id="dd_muster" onchange="Konfiguration()">
-                                                <option value="none"> - </option>
-                                                <option value="zigzag"> Zick-Zack</option>
-                                                <option value="diamonds"> Diamanten</option>
-                                            </select>
-                                        </div>
+                                            <!-- Dropdown Nähte -->
+                                            <p style="margin-top: 15px; font-size: 18pt"><i><b>Nähte:</b></i></p>
+                                            <div class="form-group">
+                                                <select class="custom-select" id="dd_naehte" onchange="Konfiguration()">
+                                                    <option value="weiß">Weiß</option>
+                                                    <option value="rot"> Rot</option>
+                                                    <option value="gruen"> Grün</option>
+                                                    <option value="blau"> Blau</option>
+                                                </select>
+                                            </div>
 
-                                        <!-- Dropdown Aufdruck -->
-                                        <p style="margin-top: 15px; font-size: 18pt"><i><b>Aufdruck:</b></i></p>
-                                        <div class="input-group">
-                                            <select class="custom-select" id="dd_aufdruck" onchange="Konfiguration()">
-                                                <option value="none"> - </option>
-                                                <option value="flammen"> Flammen</option>
-                                                <option value="musik"> Musik</option>
-                                                <option value="planet"> Planet</option>
-                                            </select>
-                                        </div>
-                                        <br><br>
-                                        <button onclick="Zurücksetzen(); Konfiguration()" class="btn btn-secondary">Konfiguration
-                                            zurücksetzen</button>
 
+                                            <!-- Dropdown Muster -->
+                                            <p style="margin-top: 15px; font-size: 18pt "><i><b>Muster:</b></i></p>
+                                            <div class="form-group">
+                                                <select class="custom-select" id="dd_muster" onchange="Konfiguration()">
+                                                    <option value="none"> - </option>
+                                                    <option value="zigzag"> Zick-Zack</option>
+                                                    <option value="diamonds"> Diamanten</option>
+                                                </select>
+                                            </div>
+
+                                            <!-- Dropdown Aufdruck -->
+                                            <p style="margin-top: 15px; font-size: 18pt"><i><b>Aufdruck:</b></i></p>
+                                            <div class="form-group">
+                                                <select class="custom-select" id="dd_aufdruck" onchange="Konfiguration()">
+                                                    <option value="none"> - </option>
+                                                    <option value="flammen"> Flammen</option>
+                                                    <option value="musik"> Musik</option>
+                                                    <option value="planet"> Planet</option>
+                                                </select>
+                                            </div>
+                                            <br><br>
+                                            <button onclick="Zurücksetzen(); Konfiguration()" class="btn btn-secondary">Konfiguration
+                                                zurücksetzen</button>
+                                        </form>
                                     </div>
                                 </div>
                             </div>

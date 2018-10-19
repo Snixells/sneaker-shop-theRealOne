@@ -1,5 +1,12 @@
 <div class="col-6">
     <div class="jumbotron">
+         {{#if hasErrors}}
+        <div class="alert alert-danger">
+            {{# each messages}}
+                <p>{{this}} </p>
+            {{/each}}
+        </div>
+        {{/if}}
         <h1 class="display-3">Willkommen</h1>
         <p class="lead">Bei uns finden Sie eine große Auswahl an Konfigurationsmöglichkeiten, um Ihren eigenen Sneaker zu gestalten. </p>
         <hr class="my-4">
