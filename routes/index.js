@@ -23,6 +23,12 @@ router.post('/submit-configurator', function (req, res, next) {
   
   console.log(req.body);
 
+  for(var i = 0; i < req.body.length; i++){
+    if(req.body[i] == "none"){
+      req.body[i] = "keine Auswahl";
+    }
+  }
+
   console.log(req.body.shoelace);
   return res.render('pages/checkOrder', {configuration: req.body});
   // return res.send({configuration: req.body});

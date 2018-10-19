@@ -26,7 +26,7 @@ passport.use('local.signup', new LocalStrategy({
         errors.forEach(function(error){
             messages.push(error.msg);
         })
-        return done(null, false, req.flash('error',message));
+        return done(null, false, req.flash('error',messages));
     }
     User.findOne({'username':username},function(err,user){
         if (err){

@@ -8,35 +8,42 @@
                     <div class="panel panel-default">
                         <div class="panel-body">
 
-                            <table class="table table-striped">
-                                <thead class="thead-dark">
-                                    <tr>
-                                        <th scope="col">Konfiguration</th>
-                                        <th scope="col">Auswahl</th>
-                                    </tr>
-                                </thead>
-                                <tbody>
-                                    <tr>
-                                        <th scope="row">1</th>
-                                        <td>Mark</td>
-                                    </tr>
-                                    <tr>
-                                        <th scope="row">2</th>
-                                    </tr>
-                                    <tr>
-                                        <th scope="row">3</th>
-                                        <td>Larry</td>
-                                    </tr>
-                                </tbody>
-                            </table>
+                            <div class="col-lg-6">
 
-                            <table class="table">
-                                <tr>
-                                    <td>Schnürsenkel</td>
-                                    <td>{{configuration.shoelace}}</td>
-                                </tr>
-                            </table>
+                                <table class="table table-striped">
+                                    <thead class="thead-dark">
+                                        <tr>
+                                            <th scope="col">Konfiguration</th>
+                                            <th scope="col">Auswahl</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td scope="row">Schnürsenkel</th>
+                                            <td>{{configuration.shoelace}}</td>
+                                        </tr>
+                                        <tr>
+                                            <td scope="row">Nähte</th>
+                                            <td>{{configuration.seam}}</td>
+                                        </tr>
+                                        <tr>
+                                            <td scope="row">Muster</th>
+                                            <td>{{configuration.pattern}}</td>
+                                        </tr>
+                                                                                <tr>
+                                            <td scope="row">Aufdruck</th>
+                                            <td>{{configuration.print}}</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
 
+                                <table class="table">
+                                    <tr>
+                                        <td>Schnürsenkel</td>
+                                        <td>{{configuration.shoelace}}</td>
+                                    </tr>
+                                </table>
+                            </div>
 
                         </div>
                         <!-- /.panel-body -->
