@@ -14,6 +14,22 @@ router.get('/', function (req, res, next) {
   res.render('configurator/index', { csrfToken: req.csrfToken(), messages: messages, hasErrors: messages.length > 0 });
 });
 
+// ALL THE ROUTES FOR NOT LOGGED IN USERS
+
+router.get('/configurator', function (req, res, next) {
+  if (req.isAuthenticated()) {
+    res.render('configurator/configurator', { csrfToken: req.csrfToken(), title: "Konfigurator -> LoggedIn" });
+  } else {
+    res.render('configurator/configurator', { csrfToken: req.csrfToken(), title: "Konfigurator -> notLoggedIn" });
+  }
+});
+
+// router.get('/configurator', isLoggedIn, function (req, res, next) {
+//   res.render('configurator/configurator', { csrfToken: req.csrfToken(), title: "Konfigurator -> LoggedIn" });
+// });
+
+// ALL THE ROUTES FOR LOGGED IN USERS
+
 router.get('/configurator', function (req, res, next) {
   res.render('configurator/configurator', { csrfToken: req.csrfToken(), title: "Konfigurator" });
 });
@@ -81,6 +97,13 @@ module.exports = router;
 // SECURITY
 function isLoggedIn(req, res, next) {
   if (req.isAuthenticated()) {
+    return next();
+  }
+  res.redirect('/');
+}
+
+function isNotLoggedIn(req, res, next) {
+  if (!req.isAuthenticated()) {
     return next();
   }
   res.redirect('/');
