@@ -20,6 +20,7 @@ passport.use('local.signup', new LocalStrategy({
 },function(req,username,password,done){
     req.checkBody('username','Invalid username').notEmpty();
     req.checkBody('password','Invalid password').notEmpty().isLength({min:4});
+    req.checkBody('surname','Invalid surname').notEmpty();
     var errors = req.validationErrors();
     if (errors){
         var messages=[];
