@@ -1,7 +1,6 @@
-<h1> {{csrfToken}}</h1> 
 <div class="col-12">
     <div class="jumbotron">
-        <h4 class="display-4">RegistrierungTest</h4>
+        <h4 class="display-4">Registrierung</h4>
         <br>
         <div id="page-wrapper">
             <div class="row">
@@ -10,7 +9,7 @@
                         <div class="panel-body">
                             <div class="row">
                                 <div class="col-lg-4">
-                                    <form role="form">
+                                    <form role="form" action="/registrieren" method="post">
                                         <div class="form-group">
                                             <select class="form-control" id="exampleFormControlSelect1">
                                                 <option>Anrede</option>
@@ -37,6 +36,9 @@
                                         <div class="form-group ">
                                             <input type="password" class="form-control" placeholder="Passwort">
                                         </div>
+                                        
+                                            <input type="hidden" name="name_csrf" value="{{csrfToken}}>
+                                        
 
                                     </form>
                                     <div class="form-group">

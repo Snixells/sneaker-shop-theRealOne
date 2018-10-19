@@ -27,6 +27,11 @@ router.get('/registrieren', function (req, res, next) {
   res.render('pages/register', {csrfToken: req.csrfToken(), title: "Registrierung" });
 });
 
+router.post('/registrieren',function(req,res,next){
+res.redirect('/');
+
+});
+
 router.get('/contact', function (req, res, next) {
   res.render('pages/contact', { title: "Kontakt" });
 });
