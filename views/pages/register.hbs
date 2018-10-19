@@ -2,6 +2,13 @@
     <div class="jumbotron">
         <h4 class="display-4">Registrierung</h4>
         <br>
+        {{#if hasErrors}}
+        <div class="alert alert-danger">
+            {{# each messages}}
+                <p>{{this}} </p>
+            {{/each}}
+        </div>
+        {{/if}}
         <div id="page-wrapper">
             <div class="row">
                 <div class="col-lg-12">
