@@ -1,6 +1,6 @@
 <div class="col-12">
     <div class="jumbotron">
-        <h4 class="display-4">Designen Sie Ihren persönlichen Schuh:</h4>
+        <h4 class="display-4">Designen Sie Ihren persönlichen Schuh:{{response}}</h4>
         <br>
         <div id="page-wrapper">
             <div class="row">
@@ -99,8 +99,11 @@
 
                                         </div>
                                         <br><br>
-                                        <button type="submit" class="btn btn-success btn-lg" id="btnSendConfiguration">Jetzt
-                                            für 45€ kaufen!</button>
+                                        {{!-- <button type="submit" class="btn btn-success btn-lg" id="btnSendConfiguration">Jetzt
+                                            für 45€ kaufen!</button> --}}
+
+                                        <button onclick="Zurücksetzen(); Konfiguration()" class="btn btn-secondary">Konfiguration
+                                            zurücksetzen</button>
                                     </div>
 
                                     <div class="col-md-2 order-md-2">
@@ -152,8 +155,11 @@
                                                 </select>
                                             </div>
                                             <br><br>
-                                            <button onclick="Zurücksetzen(); Konfiguration()" class="btn btn-secondary">Konfiguration
-                                                zurücksetzen</button>
+                                            <input type="hidden" name="_csrf" value="{{csrfToken}}">
+
+                                            <button type="submit" class="btn btn-success btn-lg" id="btnSendConfiguration">Jetzt
+                                                für 45€ kaufen!</button>
+
                                         </form>
                                     </div>
                                 </div>
