@@ -18,7 +18,6 @@ var user = new Schema({
     birthdate: Date,
     titel: String, 
     phoneNumber: Number
-
 })
 
 module.exports = mongoose.model('UserSchema', user);
