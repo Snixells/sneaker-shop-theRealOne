@@ -44,14 +44,16 @@ passport.use('local.signin',new LocalStrategy({
     passwordField: 'password',
     passReqToCallback: true},
     function(req,username,password,done){
-        req.checkBody('email','Invalid username').notEmpty();
+        req.checkBody('username','Invalid username').notEmpty();
+        req.checkBody('password','Invalid password').notEmpty();
         var errors = req.validationErrors();
         if (errors){
+            var messages = [];
             errors.forEach(function(error){
                 message.push(error.msg);
 
-            })
-            return done (null, false, req.flash('error',messages));
+            });
+            return done(null, false, req.flash('error',messages));
         }
         User.findOne({'username': username},function(err,user){
             if (err){
@@ -60,6 +62,11 @@ passport.use('local.signin',new LocalStrategy({
             if (!user) {
                 return done(null,false,{message: 'No User found'});
             }
+            if (!user.validPassword(password)){
+                return done(null,false,{message: 'Wrong password.'});
+            }
+            return done(null, user);
+
           
-        })
+        });
     }));
