@@ -127,7 +127,7 @@
                                                         </div>
                                                         <div class="form-group">
                                                             <input class="form-control" placeholder="Vorname" id="forename"
-                                                                name="forename" type="text">
+                                                                name="forename">
                                                         </div>
                                                         <div class="form-group">
                                                             <input class="form-control" placeholder="Stra&szlig;e" id="street"
@@ -135,13 +135,16 @@
                                                         </div>
                                                         <div class="form-group ">
                                                             <input class="form-control" placeholder="Postleitzahl" id="postcode"
-                                                                name="postcode" type="number">
+                                                                name="postcode">
                                                         </div>
                                                         <div class="form-group ">
                                                             <input class="form-control" placeholder="E-Mail" id="email"
-                                                                name="email"  type="email">
+                                                                name="email">
                                                         </div>
 														</div>
+                                                        <div class="form-group ">
+                                                                <input type="email" data-error-message="Ihre E-Mail Adresse ist nicht valide" />
+                                                        </div>
                                                         <hr>
 
                                                         <div class="form-group">
@@ -165,15 +168,15 @@
                                                     </div>
                                                     <div class="form-group">
                                                         <input class="form-control" placeholder="Nachname" id="surname"
-                                                            name="surname" type="text">
+                                                            name="surname">
                                                     </div>
                                                     <div class="form-group ">
                                                         <input class="form-control" placeholder="Hausnummer" id="streetnumber"
-                                                            name="streetnumber" type="number">
+                                                            name="streetnumber">
                                                     </div>
                                                     <div class="form-group ">
                                                         <input class="form-control" placeholder="Stadt" id="location"
-                                                            name="location" type="text">
+                                                            name="location">
                                                     </div>
                                                     <hr>
                                                 </div>
@@ -195,20 +198,18 @@
 									<label><input type="radio" name="optradio">Rechnung</label>
 								</div>
 								<br>
-									<label for="paypal"><img src="rechng.png" alt="paypal" /></label>
-								<br>
 								<div class="radio">
 									<label><input type="radio" name="optradio" disabled>Paypal</label>
 								</div>
 								<br>
-									<label for="paypal"><img src="paypal.png" alt="paypal" /></label>
-								<br>
 								<div class="radio disabled">
 									<label><input type="radio" name="optradio" disabled>SofortÜberweisung</label>
 								</div>
-								<br>
-									<label for="paypal"><img src="sofort.png" alt="paypal" /></label>
                                 <br>
+								<label for="rechnung"><img src="rechng.png" alt="rechng" align="left"/></label>
+								<label for="paypal"><img src="paypal.png" alt="paypal" align="center"/></label>
+								<label for="sofort"><img src="sofort.png" alt="sofort" align="center"/></label>
+								<br>
 								<br>
                             </div>
 
