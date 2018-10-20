@@ -2,9 +2,18 @@
 	<a class="navbar-brand" style="color:white" a href="/">Kr&uuml;ger Schuh GmbH</a>
 	<form class="form-inline" action="/einloggen" method="post">
 		<!-- Start Login Modal -->
-		<button type="button" class="btn btn-light" data-toggle="modal" data-target="#exampleModal">
+
+		{{#if loggedin}}
+        <a class="btn btn-light" href="/logout" role="button"  >
+			<i class="fas fa-user-circle"></i>&nbsp;Hallo {{username}}! - Logout
+		</button>
+        {{else}}
+        <button type="button" class="btn btn-light" data-toggle="modal" data-target="#exampleModal">
 			<i class="fas fa-user-circle"></i>&nbsp;Login
 		</button>
+        {{/if}}
+
+		
 
 		<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
 			<div class="modal-dialog" role="document">
@@ -33,10 +42,20 @@
 		</div>
 		<!-- Ende Login Modal -->
 		&nbsp;
-		<a href="/registrieren" class="btn btn-light" role="button" aria-pressed="true"><i class="fas fa-sign-in-alt"></i>&nbsp;Registrieren</a>
+		{{#if loggedin}}
+        
+        {{else}}
+        <a href="/registrieren" class="btn btn-light" role="button" aria-pressed="true"><i class="fas fa-sign-in-alt"></i>&nbsp;Registrieren</a>
+        {{/if}}
+
+
+
+		
+		
+		
 		&nbsp;
-		<button type="button" class="btn btn-warning">
+		{{!-- <button type="button" class="btn btn-warning">
 			<i class="fa fa-shopping-cart" aria-hidden="true"></i> Warenkorb <span class="badge badge-danger">1</span>
-		</button>
+		</button> --}}
 	</form>
 </nav>
