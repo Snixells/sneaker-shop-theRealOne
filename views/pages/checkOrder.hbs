@@ -141,7 +141,6 @@
                                                             <input class="form-control" placeholder="E-Mail" id="email"
                                                                 name="email">
                                                         </div>
-                                                        <hr>
 
                                                         <div class="form-group">
                                                             <div class="checkbox">
@@ -152,6 +151,7 @@
                                                                 </label>
                                                             </div>
                                                         </div>
+                                                        <hr>
                                                 </div>
                                                 <!-- /.col-lg-6 (nested) -->
                                                 <div class="col-lg-4">
@@ -174,7 +174,6 @@
                                                         <input class="form-control" placeholder="Stadt" id="location"
                                                             name="location">
                                                     </div>
-                                                    <hr>
                                                 </div>
                                                 <!-- /.col-lg-6 (nested) -->
 
@@ -188,41 +187,45 @@
                                     <!-- /.col-lg-12 -->
                                 </div>
                                 <!-- /.row -->
+                                <br>
+                                <br><br>
 
-                                <b>Zahlweise:<b>
-                                        <br>
-                                        <br>
-                                        <table>
-                                            <tr>
-                                                <td><label><input type="radio" name="optradio">Rechnung</label></td>
-                                                <td><label><input type="radio" name="optradio" disabled>Paypal</label></td>
-                                                <td> <label><input type="radio" name="optradio" disabled>SofortÜberweisung</label></td>
-                                            </tr>
-                                            <tr>
-                                                <td class="paymentTableData"></td>
-                                                <td class="paymentTableData"><label for="paypal"><img src="/img/payment/paypal.png"
-                                                            alt="paypal" align="center" /></label></td>
-                                                <td class="paymentTableData"><label for="sofort"><img src="/img/payment/transferral.png"
-                                                            alt="sofort" align="center" /></label></td>
-                                            </tr>
-                                        </table>
-                                        {{!-- <div class="radio" style="float:left">
-                                            <label><input type="radio" name="optradio">Rechnung</label>
-                                        </div>
-                                        <div class="radio" style="margin-left:20px; float:left">
-                                            <label><input type="radio" name="optradio" disabled>Paypal</label>
-                                        </div>
-                                        <div class="radio disabled" style="margin-left:40px; float:left">
-                                            <label><input type="radio" name="optradio" disabled>SofortÜberweisung</label>
-                                        </div>
-                                        <br>
-                                        <br>
-                                        <label for="rechnung"><img src="/img/rechng.png" alt="rechng" align="left" /></label>
-                                        <label for="paypal"><img src="/img/paypal.png" alt="paypal" align="center" /></label>
-                                        <label for="sofort"><img src="/img/sofort.png" alt="sofort" align="center" /></label>
-                                        --}}
-                                        <br>
-                                        <br>
+                                <h4 class="display-4">Und wählen hier Ihre Zahlungsweise aus</h4>
+                                <br>
+                                <br>
+                                <br>
+                                <table class="paymentTable">
+                                    <tr>
+                                        <td><label><input type="radio" name="optradio"> Rechnung</label></td>
+                                        <td><label><input type="radio" name="optradio" disabled> Paypal</label></td>
+                                        <td> <label><input type="radio" name="optradio" disabled> SofortÜberweisung</label></td>
+                                    </tr>
+                                    <tr>
+                                        <td class="paymentTableData"></td>
+                                        <td class="paymentTableData"><label for="paypal"><img src="/img/payment/paypal.png"
+                                                    alt="paypal" align="center" /></label></td>
+                                        <td class="paymentTableData"><label for="sofort"><img src="/img/payment/transferral.png"
+                                                    alt="sofort" align="center" /></label></td>
+                                    </tr>
+                                </table>
+                                <br>
+                                {{!-- <div class="radio" style="float:left">
+                                    <label><input type="radio" name="optradio">Rechnung</label>
+                                </div>
+                                <div class="radio" style="margin-left:20px; float:left">
+                                    <label><input type="radio" name="optradio" disabled>Paypal</label>
+                                </div>
+                                <div class="radio disabled" style="margin-left:40px; float:left">
+                                    <label><input type="radio" name="optradio" disabled>SofortÜberweisung</label>
+                                </div>
+                                <br>
+                                <br>
+                                <label for="rechnung"><img src="/img/rechng.png" alt="rechng" align="left" /></label>
+                                <label for="paypal"><img src="/img/paypal.png" alt="paypal" align="center" /></label>
+                                <label for="sofort"><img src="/img/sofort.png" alt="sofort" align="center" /></label>
+                                --}}
+                                <br>
+                                <br>
                             </div>
 
 
