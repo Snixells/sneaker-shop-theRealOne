@@ -82,6 +82,31 @@ router.post('/submit-configuration', function (req, res, next) {
     }).save();
     res.render('pages/configurationSent', { configuration: req.body, csrfToken: req.csrfToken(), loggedin: true, username: req.user.username, isadmin: req.user.admin, useradress: req.user });
   } else {
+    var order = new Order({
+      date: getDate(),
+      user: {
+        guest: {
+          email: req.body.email,
+          forename: req.body.forename,
+          surname: req.body.surname,
+          adress: {
+            street: req.body.street,
+            streetnumber: req.body.streetnumber,
+            postcode: req.body.postcode,
+            location: req.body.location
+          }
+        }
+      },
+      price: req.body.price,
+      paymentMethod: "Rechnung",
+
+      configuration: {
+        shoelace: req.body.shoelace,
+        pattern: req.body.pattern,
+        seam: req.body.seam,
+        print: req.body.print
+      }
+    }).save();
     res.render('pages/configurationSent', { configuration: req.body, csrfToken: req.csrfToken(), });
   }
 
