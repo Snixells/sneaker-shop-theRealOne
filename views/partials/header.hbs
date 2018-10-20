@@ -13,6 +13,12 @@
 		</button>
         {{/if}}
 
+		{{#if isadmin}}
+        <a href="/analytics" class="btn btn-danger" role="button" aria-pressed="true"><i class="fa fa-cogs" aria-hidden="true"></i>&nbsp;Dashboard</a> 
+        {{else}}
+    
+        {{/if}}
+
 		
 
 		<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">

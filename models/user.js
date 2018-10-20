@@ -16,7 +16,8 @@ var user = new Schema({
     },
     birthdate: Date,
     titel: String, 
-    phoneNumber: Number
+    phoneNumber: Number,
+    admin: Boolean,
 });
 user.methods.encryptPassword = function(password){
     return bcrypt.hashSync(password,bcrypt.genSaltSync(5),null);

@@ -39,7 +39,19 @@ passport.use('local.signup', new LocalStrategy({
         var newUser=new User();
             newUser.username=username;
             newUser.password=newUser.encryptPassword(password);
-            // newUser.surname=surname;
+            newUser.surname=req.body.surname;
+            newUser.forename=req.body.forename;
+
+            newUser.adress.streetnumber=req.body.streetnumber;
+            newUser.adress.street=req.body.street;
+            newUser.adress.postcode=req.body.postcode;
+            newUser.adress.location=req.body.location;
+            newUser.phonenumber=req.body.phoneNumber;
+
+            newUser.birthday=req.body.birthday;
+           
+            newUser.email=req.body.email;
+            newUser.admin=false;
             newUser.save(function(err,result){
                 if (err){
                         return done(err);
