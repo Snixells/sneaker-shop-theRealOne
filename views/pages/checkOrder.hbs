@@ -106,11 +106,11 @@
 
                             {{#if loggedin}}
                             {{else}}
-                        
+
                             <h4 class="display-4">Bitte geben Sie hier nun Ihre Rechnungs und Versandadresse
                                 an!</h4>
-                                <br>
-                                <br>
+                            <br>
+                            <br>
                             <div class="row">
                                 <div class="col-lg-12">
                                     <div class="panel panel-default">
@@ -189,17 +189,40 @@
                                 </div>
                                 <!-- /.row -->
 
-                                Zahlweise:
-                                <div class="radio">
-                                    <label><input type="radio" name="optradio">Rechnung</label>
-                                </div>
-                                <div class="radio">
-                                    <label><input type="radio" name="optradio" disabled>Paypal</label>
-                                </div>
-                                <div class="radio disabled">
-                                    <label><input type="radio" name="optradio" disabled>SofortÜberweisung</label>
-                                </div>
-                                <br>
+                                <b>Zahlweise:<b>
+                                        <br>
+                                        <br>
+                                        <table>
+                                            <tr>
+                                                <td><label><input type="radio" name="optradio">Rechnung</label></td>
+                                                <td><label><input type="radio" name="optradio" disabled>Paypal</label></td>
+                                                <td> <label><input type="radio" name="optradio" disabled>SofortÜberweisung</label></td>
+                                            </tr>
+                                            <tr>
+                                                <td class="paymentTableData"></td>
+                                                <td class="paymentTableData"><label for="paypal"><img src="/img/payment/paypal.png"
+                                                            alt="paypal" align="center" /></label></td>
+                                                <td class="paymentTableData"><label for="sofort"><img src="/img/payment/transferral.png"
+                                                            alt="sofort" align="center" /></label></td>
+                                            </tr>
+                                        </table>
+                                        {{!-- <div class="radio" style="float:left">
+                                            <label><input type="radio" name="optradio">Rechnung</label>
+                                        </div>
+                                        <div class="radio" style="margin-left:20px; float:left">
+                                            <label><input type="radio" name="optradio" disabled>Paypal</label>
+                                        </div>
+                                        <div class="radio disabled" style="margin-left:40px; float:left">
+                                            <label><input type="radio" name="optradio" disabled>SofortÜberweisung</label>
+                                        </div>
+                                        <br>
+                                        <br>
+                                        <label for="rechnung"><img src="/img/rechng.png" alt="rechng" align="left" /></label>
+                                        <label for="paypal"><img src="/img/paypal.png" alt="paypal" align="center" /></label>
+                                        <label for="sofort"><img src="/img/sofort.png" alt="sofort" align="center" /></label>
+                                        --}}
+                                        <br>
+                                        <br>
                             </div>
 
 

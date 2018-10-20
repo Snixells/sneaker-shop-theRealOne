@@ -1,9 +1,12 @@
+/* KONFIGURATOR */
+
 .wrap {
-    width:720px;
+    width: 720px;
     height: 405px;
     position: relative;
     border: 2px solid #555555;
 }
+
 img {
     position: absolute;
 }
@@ -15,7 +18,10 @@ img {
     left: 0;
     z-index: 0;
 }
-.gruenNaht, .blauNaht, .rotNaht {
+
+.gruenNaht,
+.blauNaht,
+.rotNaht {
     width: 720px;
     height: 405px;
     top: 0;
@@ -23,14 +29,9 @@ img {
     z-index: 1;
 }
 
-.grauSchnuer, .hellblauSchnuer, .rosaSchnuer {
-    width: 720px;
-    height: 405px;
-    top: 0;
-    left: 0;
-    z-index: 2;
-}
-.diamonds, .zigzag {
+.grauSchnuer,
+.hellblauSchnuer,
+.rosaSchnuer {
     width: 720px;
     height: 405px;
     top: 0;
@@ -38,7 +39,18 @@ img {
     z-index: 2;
 }
 
-.planet, .flammen, .musik {
+.diamonds,
+.zigzag {
+    width: 720px;
+    height: 405px;
+    top: 0;
+    left: 0;
+    z-index: 2;
+}
+
+.planet,
+.flammen,
+.musik {
     width: 720px;
     height: 405px;
     top: 0;
@@ -46,6 +58,15 @@ img {
     z-index: 3;
 }
 
-.dd_aufdruck, .dd_muster, .dd_naehte, .dd_schnuersenkel {
-     z-index: 4;
-     }
+.dd_aufdruck,
+.dd_muster,
+.dd_naehte,
+.dd_schnuersenkel {
+    z-index: 4;
+}
+
+/* CHECK ORDER */
+
+.paymentTableData {
+    width: 200px;
+}
