@@ -1,6 +1,20 @@
 <div class="col-12">
     <div class="jumbotron">
+
+{{#if loggedin}}
         <h4 class="display-4">Bestellung</h4>
+        Ihre Daten: 
+        {{useradress.forename}}
+        {{useradress.surname}}
+        {{useradress.adress.street}}
+        {{useradress.adress.streetNumber}}
+        {{useradress.adress.location}}
+        {{useradress.adress.postcode}}
+		</button>
+        {{else}}
+       <h4 class="display-4">Bestellung als Gast</h4>
+        {{/if}}
+
         <br>
         <div id="page-wrapper">
             <div class="row">
@@ -46,7 +60,36 @@
                                     <input type="hidden" name="seam" value="{{configuration.seam}}">
                                     <input type="hidden" name="pattern" value="{{configuration.pattern}}">
                                     <input type="hidden" name="print" value="{{configuration.print}}">
-                                    <button type="submit" class="btn btn-primary mb-2">Bestätigen und Absenden</button>
+
+
+                                    {{!-- ANPASSSUNGEN! --}}
+                                    <br>
+                                     <div><h2>Preis fehlt noch</h2></div>
+                                     <br>
+
+                                    Zahlweise:
+                                    <div class="radio">
+                                    <label><input type="radio" name="optradio" >Rechnung</label>
+                                    </div>
+                                    <div class="radio">
+                                    <label><input type="radio" name="optradio" disabled>Paypal</label>
+                                    </div>
+                                    <div class="radio disabled">
+                                    <label><input type="radio" name="optradio" disabled>SofortÜberweisung</label>
+                                    </div>
+                                    <br>
+
+
+                                {{#if loggedin}}
+                                {{else}}
+                            <h4 class="display-4">Bitte geben Sie hier nun Ihre Rechnungs und Versandadresse an!</h4>
+                                {{!-- Platz für Adress Eingabe Formula --}}
+
+
+                                {{/if}}
+
+                                   
+                                    <button type="submit" class="btn btn-primary mb-2">Bestätigen</button>
                                 </form>
 
                             </div>
