@@ -92,7 +92,7 @@ router.post('/submit-configuration', function (req, res, next) {
       if (req.body.pattern=="Zick-Zack") {metadataorders.configuration.pattern.ZickZack=metadataorders.configuration.pattern.ZickZack+1;}
       if (req.body.patter=="Diamanten")  {metadataorders.configuration.pattern.Diamanten=metadataorders.configuration.pattern.Diamanten+1;}
 
-      if (req.body.print=="Kein Angaben") {metadataorders.configuration.print.Standard=metadataorders.configuration.print.Standard+1;}
+      if (req.body.print=="Kein Angabe") {metadataorders.configuration.print.Standard=metadataorders.configuration.print.Standard+1;}
       if (req.body.print=="Flammen") {metadataorders.configuration.print.Flammen=metadataorders.configuration.print.Flammen+1;}
       if (req.body.print=="Musik") {metadataorders.configuration.print.Musik=metadataorders.configuration.print.Musik+1;}
       if (req.body.print=="Planet")  {metadataorders.configuration.print.Planet=metadataorders.configuration.print.Planet+1;}
