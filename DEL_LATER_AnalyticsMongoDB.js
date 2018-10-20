@@ -2,6 +2,7 @@ var mongoose = require('mongoose');
 var Order = require('./models/orders');
 var Metadata = require('./models/metadata');
 var User = require('./models/user');
+var Metadataorders = require('./models/metadataorders');
 
 
 var connectionUrl = "mongodb+srv://Snixells:qouH6xQdnPt6Nsbd@cluster0-8j2qj.mongodb.net/krueger";
@@ -27,11 +28,49 @@ mongoose.connect(connectionUrl);
 //     }
 // })
 
-var orderPromise = order.save();
+// ORDERS
+var metadata = new Metadata({
+    metadataorders: true,
+    configuration: {
+        shoelace: {
+            Weiß: 0,
+            Rosa: 0,
+            Grau: 0,
+            Hellblau: 0
+        },
+        seam: {
+            Weiß: 0,
+            Rot: 0,
+            Grün: 0,
+            Blau: 0,
+        },
+        pattern: {
+            Standard: 0,
+            ZickZack: 0,
+            Diamanten: 0,
+        },
+        print: {
+            Standard: 0,
+            Flammen: 0,
+            Musik: 0,
+            Planet: 0,
+        }
+    }
+})
 
-orderPromise.then(() => {
+var metadataPromise = metadata.save();
+
+metadataPromise.then(() => {
     mongoose.disconnect();
 });
+
+
+
+// var orderPromise = order.save();
+
+// orderPromise.then(() => {
+//     mongoose.disconnect();
+// });
 
 // var order = new Order({
 //     date: new Date("July 21, 1983 01:15:00"),

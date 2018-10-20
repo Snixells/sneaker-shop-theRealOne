@@ -1,1 +1,164 @@
-<h1>PLACEHOLDER FÜR ANALYTICS</h1>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link rel="stylesheet" href="website-sneaker/font-awesome/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
+    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/morris.js/0.5.1/morris.css">
+    <title>Dashboard - Kr&uuml;ger Schuh GmbH</title>
+  </head>
+<body>
+
+    <div class="col-12">
+<div class="jumbotron">
+  <h4 class="display-4">Dashboard</h4>
+  <br>
+   <div id="page-wrapper">
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="panel panel-default">
+                        <div class="panel-body">
+                            
+                           <div id="linegraph" style="height: 250px;">Anmeldungen/Tag</div>   
+                           
+    
+                            <div id="donutShoelace" style="height: 150px;"></div>     
+                            <div id="donutSeam" style="height: 150px;"></div>     
+                            <div id="donutPattern" style="height: 150px;"></div>  
+                            <div id="donutPrint" style="height: 150px;"></div>        
+                       
+                        </div>
+                        <!-- /.panel-body -->
+                    </div>
+                    <!-- /.panel -->
+                </div>
+                <!-- /.col-lg-12 -->
+            </div>
+            <!-- /.row -->
+        </div>
+        <!-- /#page-wrapper -->
+</div>
+
+ <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.0/jquery.min.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/raphael/2.1.0/raphael-min.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/morris.js/0.5.1/morris.min.js"></script>
+    
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+
+
+<script>
+var dataarrayLine=[];
+var dataarrayDonutShoelace=[];
+var dataarrayDonutSeam=[];
+var dataarrayDonutPattern=[];
+var dataarrayDonutPrint=[];
+drawLineGraph();
+drawDonutShoelace();
+drawDonutSeam();
+drawDonutPattern();
+drawDonutPrint(); 
+
+function createLineGraph(dataarray){
+new Morris.Line({
+  element: 'linegraph',
+  data: dataarray,
+  xkey: 'date',
+  ykeys: ['loginsThisDay'],
+  labels: ['LoginsThisDay'],
+  xLabels:'day'
+});
+}
+
+function createDonutShoelace(dataarray){
+new Morris.Donut({
+  element: 'donutShoelace',
+  data: dataarray,
+  //colors:["#FFFFFF","#FC58FA","#BABABA","#8CE5FF"]
+  });
+};
+
+function createDonutSeam(dataarray){
+new Morris.Donut({
+  element: 'donutSeam',
+  data: dataarray,
+  //colors:["#FFFFFF","#EF4D4D","#31F85E","#313DF8"]
+  });
+};
+
+function createDonutPattern(dataarray){
+new Morris.Donut({
+  element: 'donutPattern',
+  data: dataarray,
+  
+  });
+};
+
+function createDonutPrint(dataarray){
+new Morris.Donut({
+  element: 'donutPrint',
+  data: dataarray,
+  
+  });
+};
+
+function drawLineGraph() {  
+{{# each metadata}}
+dataarrayLine.push({"date":"{{this.date}}","loginsThisDay":"{{this.loginsThisDay}}"});
+{{/each}}
+createLineGraph(dataarrayLine);         
+};
+
+function drawDonutShoelace(){
+{{# each metadata}}
+{{# if this.metadataorders}}
+dataarrayDonutShoelace.push({"label":"Weiß","value":"{{this.configuration.shoelace.Weiß}}"});
+dataarrayDonutShoelace.push({"label":"Rosa","value":"{{this.configuration.shoelace.Rosa}}"});
+dataarrayDonutShoelace.push({"label":"Grau","value":"{{this.configuration.shoelace.Grau}}"});
+dataarrayDonutShoelace.push({"label":"Hellblau","value":"{{this.configuration.shoelace.Hellblau}}"});
+{{/if}}
+{{/each}}
+createDonutShoelace(dataarrayDonutShoelace);
+};
+
+function drawDonutSeam(){
+{{# each metadata}}
+{{# if this.metadataorders}}
+dataarrayDonutSeam.push({"label":"Weiß","value":"{{this.configuration.seam.Weiß}}"});
+dataarrayDonutSeam.push({"label":"Rot","value":"{{this.configuration.seam.Rot}}"});
+dataarrayDonutSeam.push({"label":"Grün","value":"{{this.configuration.seam.Grün}}"});
+dataarrayDonutSeam.push({"label":"Blau","value":"{{this.configuration.seam.Blau}}"});
+{{/if}}
+{{/each}}
+createDonutShoelace(dataarrayDonutSeam);
+};
+
+function drawDonutPattern(){
+{{# each metadata}}
+{{# if this.metadataorders}}
+dataarrayDonutPattern.push({"label":"Standard","value":"{{this.configuration.pattern.Standard}}"});
+dataarrayDonutPattern.push({"label":"Zick-Zack","value":"{{this.configuration.pattern.ZickZack}}"});
+dataarrayDonutPattern.push({"label":"Diamanten","value":"{{this.configuration.pattern.Diamanten}}"});
+
+{{/if}}
+{{/each}}
+createDonutShoelace(dataarrayDonutPattern);
+};
+
+function drawDonutPrint(){
+{{# each metadata}}
+{{# if this.metadataorders}}
+dataarrayDonutPrint.push({"label":"Standard","value":"{{this.configuration.print.Standard}}"});
+dataarrayDonutPrint.push({"label":"Flammen","value":"{{this.configuration.print.Flammen}}"});
+dataarrayDonutPrint.push({"label":"Musik","value":"{{this.configuration.print.Musik}}"});
+dataarrayDonutPrint.push({"label":"Planet","value":"{{this.configuration.print.Planet}}"});
+{{/if}}
+{{/each}}
+createDonutShoelace(dataarrayDonutPrint);
+};
+
+
+</script>
+

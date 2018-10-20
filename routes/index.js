@@ -3,6 +3,8 @@ var router = express.Router();
 var csrf = require('csurf');
 var passport = require('passport')
 var csrfProtection = csrf();
+var MetaData = require('../models/metadata');
+var MetaDataorders = require('../models/metadataorders');
 var Order = require('../models/orders');
 
 router.use(csrfProtection);
@@ -64,6 +66,46 @@ router.post('/configurator', function (req, res, next) {
 });
 
 router.post('/submit-configuration', function (req, res, next) {
+  
+  
+
+   MetaData.findOne({'metadataorders':true},function(err,metadataorders){
+    if (err){
+        return done(err);
+    }
+    if (!metadataorders) {
+      return done(err);
+    }
+    
+    if(metadataorders){
+      if(req.body.shoelace=="Weiß") {metadataorders.configuration.shoelace.Weiß=metadataorders.configuration.shoelace.Weiß+1;}
+      if (req.body.shoelace=="Rosa") {metadataorders.configuration.shoelace.Rosa=metadataorders.configuration.shoelace.Rosa+1;}
+      if (req.body.shoelace=="Grau") {metadataorders.configuration.shoelace.Grau=metadataorders.configuration.shoelace.Grau+1;}
+      if (req.body.shoelace=="Hellblau") {metadataorders.configuration.shoelace.Hellblau=metadataorders.configuration.shoelace.Hellblau+1;}
+
+      if(req.body.seam=="Weiß") {metadataorders.configuration.seam.Weiß=metadataorders.configuration.seam.Weiß+1;}
+      if (req.body.seam=="Rot") {metadataorders.configuration.seam.Rot=metadataorders.configuration.seam.Rot+1;}
+      if (req.body.seam=="Grün") {metadataorders.configuration.seam.Grün=metadataorders.configuration.seam.Grün+1;}
+      if (req.body.seam=="Blau")  {metadataorders.configuration.seam.Blau=metadataorders.configuration.seam.Blau+1;}
+      
+      if (req.body.pattern=="Keine Angabe") {metadataorders.configuration.pattern.Standard=metadataorders.configuration.pattern.Standard+1;}
+      if (req.body.pattern=="Zick-Zack") {metadataorders.configuration.pattern.ZickZack=metadataorders.configuration.pattern.ZickZack+1;}
+      if (req.body.patter=="Diamanten")  {metadataorders.configuration.pattern.Diamanten=metadataorders.configuration.pattern.Diamanten+1;}
+
+      if (req.body.print=="Kein Angaben") {metadataorders.configuration.print.Standard=metadataorders.configuration.print.Standard+1;}
+      if (req.body.print=="Flammen") {metadataorders.configuration.print.Flammen=metadataorders.configuration.print.Flammen+1;}
+      if (req.body.print=="Musik") {metadataorders.configuration.print.Musik=metadataorders.configuration.print.Musik+1;}
+      if (req.body.print=="Planet")  {metadataorders.configuration.print.Planet=metadataorders.configuration.print.Planet+1;}
+
+      metadataorders.save(function(err){
+        if (err)
+         console.log('error')
+        else
+        console.log('success')
+    })
+}
+})
+
   if (req.isAuthenticated()) {
     var order = new Order({
       date: getDate(),
@@ -114,11 +156,22 @@ router.post('/submit-configuration', function (req, res, next) {
 });
 
 router.get('/analytics', function (req, res, next) {
-
   if (req.isAuthenticated()) {
-    res.render('pages/analytics', { title: "Impressum", configuration: req.body, csrfToken: req.csrfToken(), loggedin: true, username: req.user.username, isadmin: req.user.admin });
-  } else {
 
+    
+    MetaData.find({}, function (err, metadata) {
+      if (err) {
+        return done(err);
+      }
+      if (!metadata) {
+        return done(err);
+      }
+      if(metadata){
+        res.render('pages/analytics', { metadata: metadata, title: "Analytics", csrfToken: req.csrfToken(), loggedin: true, username: req.user.username, isadmin: req.user.admin });
+      }
+    });
+  }
+  else {
   }
 
 

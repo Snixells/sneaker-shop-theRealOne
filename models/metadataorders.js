@@ -2,10 +2,7 @@ var mongoose = require('mongoose');
 
 var Schema = mongoose.Schema;
 
-var metadata = new Schema({
-    loginsThisDay: Number,
-    date:String,
-    metadataorders:Boolean,
+var metadataorders = new Schema({
     configuration: {
         shoelace: {
             Weiß: Number,
@@ -33,5 +30,5 @@ var metadata = new Schema({
     }
 })
 
-module.exports = mongoose.model('MetadataSchema', metadata);
+module.exports = mongoose.model('MetadataordersSchema', metadataorders);
 
