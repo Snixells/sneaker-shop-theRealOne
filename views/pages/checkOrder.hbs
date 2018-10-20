@@ -3,14 +3,6 @@
 
         {{#if loggedin}}
         <h4 class="display-4">Bestellung</h4>
-        Ihre Daten:
-        {{useradress.forename}}
-        {{useradress.surname}}
-        {{useradress.adress.street}}
-        {{useradress.adress.streetNumber}}
-        {{useradress.adress.location}}
-        {{useradress.adress.postcode}}
-        </button>
         {{else}}
         <h4 class="display-4">Bestellung als Gast</h4>
         {{/if}}
@@ -54,6 +46,45 @@
                                         </tr>
                                     </tbody>
                                 </table>
+
+                                {{#if loggedin}}
+                                <br>
+                                <hr>
+                                <br>
+                                <table class="table table-striped">
+                                    <thead class="thead-dark">
+                                        <tr>
+                                            <th scope="col">Ihre Daten</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td scope="row">Vorname</th>
+                                            <td>{{useradress.forename}}</td>
+                                        </tr>
+                                        <tr>
+                                            <td scope="row">Nachname</th>
+                                            <td>{{useradress.surname}}</td>
+                                        </tr>
+                                        <tr>
+                                            <td scope="row">Straße</th>
+                                            <td>{{useradress.adress.street}}</td>
+                                        </tr>
+                                        <tr>
+                                            <td scope="row">Nummer</th>
+                                            <td>{{useradress.adress.streetnumber}}</td>
+                                        </tr>
+                                        <tr>
+                                            <td scope="row">Ort</th>
+                                            <td>{{useradress.adress.location}}</td>
+                                        </tr>
+                                        <tr>
+                                            <td scope="row">Postleitzahl</th>
+                                            <td>{{useradress.adress.postcode}}</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                                {{/if}}
                                 <br>
                                 <hr>
                                 <br>
@@ -68,10 +99,6 @@
 
 
                                     {{!-- ANPASSSUNGEN! --}}
-                                    <br>
-                                    <div>
-                                        <h2>Preis fehlt noch</h2>
-                                    </div>
                                     <br>
 
                                     Zahlweise:
