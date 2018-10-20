@@ -4,7 +4,7 @@ var Schema = mongoose.Schema;
 
 var metadata = new Schema({
     loginsThisDay: Number,
-    date: Date,
+    date:String,
     configuration: {
         shoelace: {
             white: Number,

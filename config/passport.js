@@ -1,6 +1,10 @@
 var passport = require('passport');
 var User = require('../models/user');
+var MetaData= require('../models/metadata');
+
 var LocalStrategy = require('passport-local').Strategy;
+
+
 
 passport.serializeUser(function(user,done){
     done(null,user.id);
@@ -90,7 +94,37 @@ passport.use('local.signin', new LocalStrategy({
             if (!user.validPassword(password)){
                 return done(null,false,{message: 'Wrong password.'});
             }
-            console.log(user);
+           
+            
+            var today  = new Date();
+            MetaData.findOne({'date':today.toLocaleDateString("de-DE")},function(err,metadata){
+                if (err){
+                    return done(err);
+                }
+                if (!metadata) {
+                    
+                    var today  = new Date();
+                    var newMetaData=new MetaData();
+                    newMetaData.date=today.toLocaleDateString("de-DE");
+                    newMetaData.loginsThisDay=1;
+                    newMetaData.save(function(err){
+                        if (err)
+                     console.log('error')
+                    else
+                    console.log('success')
+                    })
+                }
+                if(metadata){
+                metadata.loginsThisDay = metadata.loginsThisDay+1;
+                metadata.save(function(err){
+                    if (err)
+                     console.log('error')
+                    else
+                    console.log('success')
+                })
+            }
+            })
+            
             return done(null, user);
 
           
