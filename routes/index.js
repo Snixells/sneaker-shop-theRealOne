@@ -106,22 +106,38 @@ router.get('/logout', function (req, res, next) {
   res.redirect('/');
 })
 
-//Testweise -->
-router.get('/profile', isLoggedIn, function (req, res, next) {
-  res.render('pages/profile');
-});
 
 
 router.get('/contact', function (req, res, next) {
-  res.render('pages/contact', { title: "Kontakt" });
+  
+  if (req.isAuthenticated()) {
+    res.render('pages/contact', {title: "Kontakt" ,csrfToken: req.csrfToken(),loggedin:true,username:req.user.username, isadmin: req.user.admin});
+  } else {
+    res.render('pages/contact', { title: "Kontakt" , csrfToken: req.csrfToken(), });
+  }
+
+  
 });
 
 router.get('/disclaimer', function (req, res, next) {
-  res.render('pages/disclaimer', { title: "Datenschutz" });
+
+  if (req.isAuthenticated()) {
+    res.render('pages/disclaimer', {title: "Datenschutz" ,csrfToken: req.csrfToken(),loggedin:true,username:req.user.username, isadmin: req.user.admin});
+  } else {
+    res.render('pages/disclaimer', { title: "Datenschutz" , csrfToken: req.csrfToken(), });
+  }
+
 });
 
 router.get('/imprint', function (req, res, next) {
-  res.render('pages/imprint', { title: "Impressum" });
+
+  if (req.isAuthenticated()) {
+    res.render('pages/imprint', {title: "Impressum" ,csrfToken: req.csrfToken(),loggedin:true,username:req.user.username, isadmin: req.user.admin});
+  } else {
+    res.render('pages/imprint', { title: "Impressum" , csrfToken: req.csrfToken(), });
+  }
+
+
 });
 
 module.exports = router;
