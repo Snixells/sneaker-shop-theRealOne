@@ -107,7 +107,7 @@
                             {{#if loggedin}}
                             {{else}}
 
-                            <h4 class="display-4">Bitte geben Sie hier nun Ihre Rechnungs und Versandadresse
+                            <h4 class="display-4">Bitte geben Sie hier nun Ihre Rechnungs- und Versandadresse
                                 an!</h4>
                             <br>
                             <br>
@@ -189,11 +189,8 @@
                                 <!-- /.row -->
                                 <br>
                                 <br><br>
-
+                                {{/if}}
                                 <h4 class="display-4">Und wählen hier Ihre Zahlungsweise aus</h4>
-                                <br>
-                                <br>
-                                <br>
                                 <table class="paymentTable">
                                     <tr>
                                         <td><label><input type="radio" name="optradio"> Rechnung</label></td>
@@ -208,7 +205,6 @@
                                                     alt="sofort" align="center" /></label></td>
                                     </tr>
                                 </table>
-                                <br>
                                 {{!-- <div class="radio" style="float:left">
                                     <label><input type="radio" name="optradio">Rechnung</label>
                                 </div>
@@ -229,7 +225,6 @@
                             </div>
 
 
-                            {{/if}}
 
 
                             <button type="submit" class="btn btn-primary mb-2">Bestätigen</button>
