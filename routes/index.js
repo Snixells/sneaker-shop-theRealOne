@@ -57,7 +57,7 @@ router.post('/configurator', function (req, res, next) {
 
 router.post('/submit-configuration', function (req, res, next) {
   if (req.isAuthenticated()) {
-    res.render('pages/logedinorder', {  configuration: req.body,csrfToken: req.csrfToken(),loggedin:true,username:req.user.username,isadmin: req.user.admin });
+    res.render('pages/logedinorder', {  configuration: req.body,csrfToken: req.csrfToken(),loggedin:true,username:req.user.username,isadmin: req.user.admin, useradress: req.user });
   } else {
     res.render('pages/guestorder', { configuration: req.body, csrfToken: req.csrfToken(), });
   }
