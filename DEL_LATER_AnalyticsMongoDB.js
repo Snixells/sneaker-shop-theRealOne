@@ -11,7 +11,9 @@ mongoose.connect(connectionUrl);
 // // ORDERS
 // var order = new Order({
 //     date: new Date("July 21, 1983 01:15:00"),
-//     userID: 123,
+//     user: {
+//         userID: 123,
+//     },
 //     orderID: 1234,
 //     positions: 3,
 //     price: 123,
@@ -25,11 +27,43 @@ mongoose.connect(connectionUrl);
 //     }
 // })
 
-// var orderPromise = order.save();
+var orderPromise = order.save();
 
-// orderPromise.then(() => {
-//     mongoose.disconnect();
-// });
+orderPromise.then(() => {
+    mongoose.disconnect();
+});
+
+// var order = new Order({
+//     date: new Date("July 21, 1983 01:15:00"),
+//     user: {
+//         guest: {
+//             email: "admin@krueger-webshop.com",
+//                 forename: "Admin", 
+//                 surname: "Krueger",
+//                 adress: {
+//                     street: "Adminstraße", 
+//                     streetnumber: "42", 
+//                     postcode: 12345,
+//                     location: "Adminhausen"
+//                 },
+//                 birthdate: new Date("July 21, 1971"),
+//                 phoneNumber: 3213211244
+//         }
+//     },
+//     orderID: 1234,
+//     positions: 3,
+//     price: 123,
+//     paymentMethod: "Paypal",
+
+//     configuration: {
+//         shoelace: "gruen",
+//         pattern: "karo",
+//         seam: "blau",
+//         print: "diamant"
+//     }
+// })
+
+
 
 // mongoose.connect(connectionUrl);
 

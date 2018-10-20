@@ -3,16 +3,15 @@ var router = express.Router();
 var csrf = require('csurf');
 var passport = require('passport')
 var csrfProtection = csrf();
+var Order = require('../models/orders');
 
 router.use(csrfProtection);
-
-// var WordSchema = require('../models/word');
 
 /* GET home page. */
 router.get('/', function (req, res, next) {
   var messages = req.flash('error');
   if (req.isAuthenticated()) {
-  res.render('configurator/index', { csrfToken: req.csrfToken(),loggedin:true,username:req.user.username ,isadmin: req.user.admin, messages: messages, hasErrors: messages.length > 0 });
+    res.render('configurator/index', { csrfToken: req.csrfToken(), loggedin: true, username: req.user.username, isadmin: req.user.admin, messages: messages, hasErrors: messages.length > 0 });
   }
   else {
     res.render('configurator/index', { csrfToken: req.csrfToken(), messages: messages, hasErrors: messages.length > 0 });
@@ -23,7 +22,7 @@ router.get('/', function (req, res, next) {
 
 router.get('/configurator', function (req, res, next) {
   if (req.isAuthenticated()) {
-    res.render('configurator/configurator', { csrfToken: req.csrfToken(), title: "Konfigurator",loggedin:true,username:req.user.username,isadmin: req.user.admin, });
+    res.render('configurator/configurator', { csrfToken: req.csrfToken(), title: "Konfigurator", loggedin: true, username: req.user.username, isadmin: req.user.admin, });
   } else {
     res.render('configurator/configurator', { csrfToken: req.csrfToken(), title: "Konfigurator" });
   }
@@ -35,7 +34,7 @@ router.get('/configurator', function (req, res, next) {
 
 // ALL THE ROUTES FOR LOGGED IN USERS
 
-router.get('/logout', function(req, res){
+router.get('/logout', function (req, res) {
   req.logout();
   res.redirect('/');
 });
@@ -47,33 +46,48 @@ router.get('/logout', function(req, res){
 router.post('/configurator', function (req, res, next) {
 
   if (req.isAuthenticated()) {
-    res.render('pages/checkOrder', { configuration: req.body,csrfToken: req.csrfToken(),loggedin:true,username:req.user.username, isadmin: req.user.admin, useradress: req.user});
+    res.render('pages/checkOrder', { configuration: req.body, csrfToken: req.csrfToken(), loggedin: true, username: req.user.username, isadmin: req.user.admin, useradress: req.user });
   } else {
     res.render('pages/checkOrder', { configuration: req.body, csrfToken: req.csrfToken(), });
   }
 
- // return res.render('pages/checkOrder', { configuration: req.body, csrfToken: req.csrfToken() });
+  // return res.render('pages/checkOrder', { configuration: req.body, csrfToken: req.csrfToken() });
 });
 
 router.post('/submit-configuration', function (req, res, next) {
   if (req.isAuthenticated()) {
-    res.render('pages/configurationSent', {  configuration: req.body,csrfToken: req.csrfToken(),loggedin:true,username:req.user.username,isadmin: req.user.admin, useradress: req.user });
+    var order = new Order({
+      date: getDate(),
+      user: {
+        userID: req.user._id,
+      },
+      price: 123,
+      paymentMethod: "Rechnung",
+
+      configuration: {
+        shoelace: req.body.shoelace,
+        pattern: req.body.pattern,
+        seam: req.body.seam,
+        print: req.body.print
+      }
+    }).save();
+    res.render('pages/configurationSent', { configuration: req.body, csrfToken: req.csrfToken(), loggedin: true, username: req.user.username, isadmin: req.user.admin, useradress: req.user });
   } else {
     res.render('pages/configurationSent', { configuration: req.body, csrfToken: req.csrfToken(), });
   }
 
-  //return res.render('pages/configurationSent', { configuration: req.body });
+  // return res.render('pages/configurationSent', { configuration: req.body });
 });
 
 router.get('/analytics', function (req, res, next) {
 
   if (req.isAuthenticated()) {
-    res.render('pages/analytics', {title: "Impressum", configuration: req.body,csrfToken: req.csrfToken(),loggedin:true,username:req.user.username, isadmin: req.user.admin});
+    res.render('pages/analytics', { title: "Impressum", configuration: req.body, csrfToken: req.csrfToken(), loggedin: true, username: req.user.username, isadmin: req.user.admin });
   } else {
-   
+
   }
 
- 
+
 });
 
 
@@ -109,22 +123,22 @@ router.get('/logout', function (req, res, next) {
 
 
 router.get('/contact', function (req, res, next) {
-  
+
   if (req.isAuthenticated()) {
-    res.render('pages/contact', {title: "Kontakt" ,csrfToken: req.csrfToken(),loggedin:true,username:req.user.username, isadmin: req.user.admin});
+    res.render('pages/contact', { title: "Kontakt", csrfToken: req.csrfToken(), loggedin: true, username: req.user.username, isadmin: req.user.admin });
   } else {
-    res.render('pages/contact', { title: "Kontakt" , csrfToken: req.csrfToken(), });
+    res.render('pages/contact', { title: "Kontakt", csrfToken: req.csrfToken(), });
   }
 
-  
+
 });
 
 router.get('/disclaimer', function (req, res, next) {
 
   if (req.isAuthenticated()) {
-    res.render('pages/disclaimer', {title: "Datenschutz" ,csrfToken: req.csrfToken(),loggedin:true,username:req.user.username, isadmin: req.user.admin});
+    res.render('pages/disclaimer', { title: "Datenschutz", csrfToken: req.csrfToken(), loggedin: true, username: req.user.username, isadmin: req.user.admin });
   } else {
-    res.render('pages/disclaimer', { title: "Datenschutz" , csrfToken: req.csrfToken(), });
+    res.render('pages/disclaimer', { title: "Datenschutz", csrfToken: req.csrfToken(), });
   }
 
 });
@@ -132,9 +146,9 @@ router.get('/disclaimer', function (req, res, next) {
 router.get('/imprint', function (req, res, next) {
 
   if (req.isAuthenticated()) {
-    res.render('pages/imprint', {title: "Impressum" ,csrfToken: req.csrfToken(),loggedin:true,username:req.user.username, isadmin: req.user.admin});
+    res.render('pages/imprint', { title: "Impressum", csrfToken: req.csrfToken(), loggedin: true, username: req.user.username, isadmin: req.user.admin });
   } else {
-    res.render('pages/imprint', { title: "Impressum" , csrfToken: req.csrfToken(), });
+    res.render('pages/imprint', { title: "Impressum", csrfToken: req.csrfToken(), });
   }
 
 
@@ -155,4 +169,21 @@ function isNotLoggedIn(req, res, next) {
     return next();
   }
   res.redirect('/');
+}
+
+
+// GET DATE
+
+function getDate() {
+  var date = new Date();
+
+  var year = date.getFullYear();
+
+  var month = date.getMonth() + 1;
+  month = (month < 10 ? "0" : "") + month;
+
+  var day = date.getDate();
+  day = (day < 10 ? "0" : "") + day;
+
+  return year + month + day;
 }
