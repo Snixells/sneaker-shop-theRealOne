@@ -45,10 +45,19 @@ router.get('/logout', function (req, res) {
 
 router.post('/configurator', function (req, res, next) {
 
+  var price = 50;
+  if (req.body.print != "Keine Angabe") {
+    price += 5;
+
+  }
+  if (req.body.pattern != "Keine Angabe") {
+    price += 5;
+  }
+
   if (req.isAuthenticated()) {
-    res.render('pages/checkOrder', { configuration: req.body, csrfToken: req.csrfToken(), loggedin: true, username: req.user.username, isadmin: req.user.admin, useradress: req.user });
+    res.render('pages/checkOrder', { configuration: req.body, price: price, csrfToken: req.csrfToken(), loggedin: true, username: req.user.username, isadmin: req.user.admin, useradress: req.user });
   } else {
-    res.render('pages/checkOrder', { configuration: req.body, csrfToken: req.csrfToken(), });
+    res.render('pages/checkOrder', { configuration: req.body, price: price, csrfToken: req.csrfToken(), });
   }
 
   // return res.render('pages/checkOrder', { configuration: req.body, csrfToken: req.csrfToken() });
@@ -61,7 +70,7 @@ router.post('/submit-configuration', function (req, res, next) {
       user: {
         userID: req.user._id,
       },
-      price: 123,
+      price: req.body.price,
       paymentMethod: "Rechnung",
 
       configuration: {

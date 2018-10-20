@@ -1,18 +1,18 @@
 <div class="col-12">
     <div class="jumbotron">
 
-{{#if loggedin}}
+        {{#if loggedin}}
         <h4 class="display-4">Bestellung</h4>
-        Ihre Daten: 
+        Ihre Daten:
         {{useradress.forename}}
         {{useradress.surname}}
         {{useradress.adress.street}}
         {{useradress.adress.streetNumber}}
         {{useradress.adress.location}}
         {{useradress.adress.postcode}}
-		</button>
+        </button>
         {{else}}
-       <h4 class="display-4">Bestellung als Gast</h4>
+        <h4 class="display-4">Bestellung als Gast</h4>
         {{/if}}
 
         <br>
@@ -48,6 +48,10 @@
                                             <td scope="row">Aufdruck</th>
                                             <td>{{configuration.print}}</td>
                                         </tr>
+                                        <tr>
+                                            <td scope="row">Preis</th>
+                                            <td>{{price}}</td>
+                                        </tr>
                                     </tbody>
                                 </table>
                                 <br>
@@ -60,35 +64,39 @@
                                     <input type="hidden" name="seam" value="{{configuration.seam}}">
                                     <input type="hidden" name="pattern" value="{{configuration.pattern}}">
                                     <input type="hidden" name="print" value="{{configuration.print}}">
+                                    <input type="hidden" name="price" value="{{price}}">
 
 
                                     {{!-- ANPASSSUNGEN! --}}
                                     <br>
-                                     <div><h2>Preis fehlt noch</h2></div>
-                                     <br>
+                                    <div>
+                                        <h2>Preis fehlt noch</h2>
+                                    </div>
+                                    <br>
 
                                     Zahlweise:
                                     <div class="radio">
-                                    <label><input type="radio" name="optradio" >Rechnung</label>
+                                        <label><input type="radio" name="optradio">Rechnung</label>
                                     </div>
                                     <div class="radio">
-                                    <label><input type="radio" name="optradio" disabled>Paypal</label>
+                                        <label><input type="radio" name="optradio" disabled>Paypal</label>
                                     </div>
                                     <div class="radio disabled">
-                                    <label><input type="radio" name="optradio" disabled>SofortÜberweisung</label>
+                                        <label><input type="radio" name="optradio" disabled>SofortÜberweisung</label>
                                     </div>
                                     <br>
 
 
-                                {{#if loggedin}}
-                                {{else}}
-                            <h4 class="display-4">Bitte geben Sie hier nun Ihre Rechnungs und Versandadresse an!</h4>
-                                {{!-- Platz für Adress Eingabe Formula --}}
+                                    {{#if loggedin}}
+                                    {{else}}
+                                    <h4 class="display-4">Bitte geben Sie hier nun Ihre Rechnungs und Versandadresse
+                                        an!</h4>
+                                    {{!-- Platz für Adress Eingabe Formula --}}
 
 
-                                {{/if}}
+                                    {{/if}}
 
-                                   
+
                                     <button type="submit" class="btn btn-primary mb-2">Bestätigen</button>
                                 </form>
 
