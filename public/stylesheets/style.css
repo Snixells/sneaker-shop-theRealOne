@@ -81,3 +81,9 @@ img {
 .btn-admin {
     margin-left: 6px;
 }
+
+
+.donutShoelace, .donutSeam, .donutPattern, .donutPrint {
+    width: 150px;
+    height: 150px;
+} 
