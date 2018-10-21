@@ -78,21 +78,21 @@ router.post('/submit-configuration', function (req, res, next) {
     }
     
     if(metadataorders){
-      if(req.body.shoelace=="Weiß") {metadataorders.configuration.shoelace.Weiß=metadataorders.configuration.shoelace.Weiß+1;}
+      if (req.body.shoelace=="Weiß") {metadataorders.configuration.shoelace.Weiß=metadataorders.configuration.shoelace.Weiß+1;}
       if (req.body.shoelace=="Rosa") {metadataorders.configuration.shoelace.Rosa=metadataorders.configuration.shoelace.Rosa+1;}
       if (req.body.shoelace=="Grau") {metadataorders.configuration.shoelace.Grau=metadataorders.configuration.shoelace.Grau+1;}
       if (req.body.shoelace=="Hellblau") {metadataorders.configuration.shoelace.Hellblau=metadataorders.configuration.shoelace.Hellblau+1;}
 
-      if(req.body.seam=="Weiß") {metadataorders.configuration.seam.Weiß=metadataorders.configuration.seam.Weiß+1;}
+      if (req.body.seam=="Weiß") {metadataorders.configuration.seam.Weiß=metadataorders.configuration.seam.Weiß+1;}
       if (req.body.seam=="Rot") {metadataorders.configuration.seam.Rot=metadataorders.configuration.seam.Rot+1;}
       if (req.body.seam=="Grün") {metadataorders.configuration.seam.Grün=metadataorders.configuration.seam.Grün+1;}
       if (req.body.seam=="Blau")  {metadataorders.configuration.seam.Blau=metadataorders.configuration.seam.Blau+1;}
       
       if (req.body.pattern=="Keine Angabe") {metadataorders.configuration.pattern.Standard=metadataorders.configuration.pattern.Standard+1;}
       if (req.body.pattern=="Zick-Zack") {metadataorders.configuration.pattern.ZickZack=metadataorders.configuration.pattern.ZickZack+1;}
-      if (req.body.patter=="Diamanten")  {metadataorders.configuration.pattern.Diamanten=metadataorders.configuration.pattern.Diamanten+1;}
+      if (req.body.pattern=="Diamanten")  {metadataorders.configuration.pattern.Diamanten=metadataorders.configuration.pattern.Diamanten+1;}
 
-      if (req.body.print=="Kein Angabe") {metadataorders.configuration.print.Standard=metadataorders.configuration.print.Standard+1;}
+      if (req.body.print=="Keine Angabe") {metadataorders.configuration.print.Standard=metadataorders.configuration.print.Standard+1;}
       if (req.body.print=="Flammen") {metadataorders.configuration.print.Flammen=metadataorders.configuration.print.Flammen+1;}
       if (req.body.print=="Musik") {metadataorders.configuration.print.Musik=metadataorders.configuration.print.Musik+1;}
       if (req.body.print=="Planet")  {metadataorders.configuration.print.Planet=metadataorders.configuration.print.Planet+1;}
