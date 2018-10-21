@@ -25,23 +25,23 @@
                                             </select>
                                         </div>
                                         <div class="form-group">
-                                            <input class="form-control" placeholder="Vorname" id="forename" name="forename">
+                                            <input class="form-control" placeholder="Vorname" id="forename" name="forename" required>
                                         </div>
                                         <div class="form-group">
-                                            <input class="form-control" placeholder="Stra&szlig;e"id="street"name="street">
+                                            <input class="form-control" placeholder="Stra&szlig;e"id="street"name="street"required>
                                         </div>
                                         <div class="form-group ">
-                                            <input class="form-control" placeholder="Postleitzahl"id="postcode"name="postcode">
+                                            <input class="form-control" placeholder="Postleitzahl"id="postcode"name="postcode"required>
                                         </div>
                                         <div class="form-group ">
                                             <input class="form-control" placeholder="Geburtsdatum (dd.mm.yyyy)"id="birthday"name="birthday">
                                         </div>
                                         <hr>
                                         <div class="form-group ">
-                                            <input class="form-control" placeholder="Username"id="username"name="username">
+                                            <input class="form-control" placeholder="Username"id="username"name="username"required>
                                         </div>
                                         <div class="form-group ">
-                                            <input type="password" class="form-control" placeholder="Passwort"id="password"name="password">
+                                            <input type="password" class="form-control" placeholder="Passwort"id="password"name="password"required>
                                             <input type="hidden" name="_csrf" value="{{csrfToken}}">
                                         </div>
                                         
@@ -51,7 +51,7 @@
                                         <label>Pflichtfeld*</label>
                                         <div class="checkbox">
                                             <label>
-                                                <input type="checkbox" value="" id="datenschutzcheckbox">&nbsp;Ich akzeptiere die
+                                                <input type="checkbox" value="" id="datenschutzcheckbox"required>&nbsp;Ich akzeptiere die
                                                 Datenschutzerkl&auml;rung.
                                             </label>
                                         </div>
@@ -69,24 +69,22 @@
                                         </select>
                                     </div>
                                     <div class="form-group">
-                                        <input class="form-control" placeholder="Nachname" id="surname" name="surname">
+                                        <input class="form-control" placeholder="Nachname" id="surname" name="surname"required>
                                     </div>
                                     <div class="form-group ">
-                                        <input class="form-control" placeholder="Hausnummer"id="streetnumber"name="streetnumber">
+                                        <input class="form-control" placeholder="Hausnummer"id="streetnumber"name="streetnumber"required>
                                     </div>
                                     <div class="form-group ">
-                                        <input class="form-control" placeholder="Stadt"id="location"name="location">
+                                        <input class="form-control" placeholder="Stadt"id="location"name="location"required>
                                     </div>
                                     <div class="form-group ">
-                                        <input class="form-control" placeholder="Telefonnummer"id="phonenumber"name="phonenumber">
+                                        <input class="form-control" placeholder="Telefonnummer"id="phonenumber"name="phonenumber"required>
                                     </div>
                                     <hr>
                                     <div class="form-group ">
-                                        <input class="form-control" placeholder="E-Mail"id="email"name="email">
+                                        <input class="form-control" placeholder="E-Mail"id="email"name="email"required>
                                     </div>
-                                    <div class="form-group ">
-                                        <input type="button" class="form-control" placeholder="Passwort wiederholen">
-                                      </form> 
+                                    
                                     </div>
                                 </div>
                                 <!-- /.col-lg-6 (nested) -->
