@@ -156,7 +156,7 @@ router.post('/submit-configuration', function (req, res, next) {
 });
 
 router.get('/analytics', function (req, res, next) {
-  if (req.isAuthenticated()) {
+  if (req.isAuthenticated()&&req.user.admin) {
 
     
     MetaData.find({}, function (err, metadata) {
@@ -172,6 +172,7 @@ router.get('/analytics', function (req, res, next) {
     });
   }
   else {
+    res.redirect('/');
   }
 
 
