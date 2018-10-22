@@ -1,5 +1,18 @@
 /* KONFIGURATOR */
 
+.schoelace, .seam, .print, .pattern {
+    display: none;
+}
+
+.firstDropdownConfig {
+    font-size: 18pt;
+}
+
+.dropdownConfig {
+    margin-top: 15px;
+    font-size: 18pt;
+}
+
 .wrap {
     width: 720px;
     height: 405px;
